@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="t.xsl"?>
+<main>
+{% for x,y,z in nodes %}
+<node>
+	<x>{{x}}</x>
+	<y>{{y}}</y>
+	<z>{{z}}</z>
+	{% set neighbors = moves[loop.index - 1] %}
+	{% for n in neighbors %}
+	<neighbor>{{n+1}}</neighbor>
+	{% endfor %}
+	{% set js = jumps[loop.index - 1] %}
+	{% for i,j,k in js %}
+	<jump><a>{{i+1}}</a><b>{{j+1}}</b><c>{{k+1}}</c></jump>
+	{% endfor %}
+</node>
+{% endfor %}
+{% for x,y,z in nodes %}
+{% if z == 1 %}
+<goose>{{ loop.index }}</goose>
+{% endif %}
+{% endfor %}
+</main>
