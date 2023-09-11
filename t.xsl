@@ -13,6 +13,17 @@
 		height: 400px;
 		top: 40px;
 	}
+	.node {
+		--tsc: black;
+	}
+	label {
+		
+		font-size: 0.9rem;
+		text-align: center;
+		padding-top: 2px;
+		text-shadow: 1px 1px 1px var(--tsc), -1px -1px 1px var(--tsc), -1px 1px 1px var(--tsc), 1px -1px 1px var(--tsc);
+
+	}
 		.node {
 			width: 20px;
 			height: 20px;
@@ -41,8 +52,8 @@
 		}
 		<xsl:for-each select="node">
 			.node-<xsl:value-of select="position()" /> {
-				top: calc(<xsl:value-of select="y" /> * 45px);
-				left: calc(<xsl:value-of select="x" /> * 45px);
+				top: calc(<xsl:value-of select="y" /> * 1px - 75px - 1rem);
+				left: calc(<xsl:value-of select="x" /> * 1px - 1rem);
 			}
 			#fox-<xsl:value-of select="position()" />:checked ~ div .fox.node-<xsl:value-of select="position()" /> {
 				z-index: 500;
@@ -62,8 +73,8 @@
 				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" /> {
 					z-index: 40;
 					background: #DDF;
-					left: 300px;
-					top: 30px;
+					left: 10px;
+					top: 10px;
 					cursor: pointer;
 				}
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="." />:checked ~ div .fox-m.to-<xsl:value-of select="." /> {
@@ -72,8 +83,8 @@
 				#fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
 					z-index: 40;
 					background: #DDF;
-					left: 300px;
-					top: 30px;
+					left: 10px;
+					top: 10px;
 					cursor: pointer;
 				}
 			</xsl:for-each>
@@ -81,8 +92,8 @@
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" /> {
 					z-index: 40;
 					background: #DDF;
-					left: 300px;
-					top: 30px;
+					left: 10px;
+					top: 10px;
 					cursor: pointer;
 				}
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="c" />:checked ~ div .fox-j.c-<xsl:value-of select="c" /> {
@@ -91,15 +102,15 @@
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" /> {
 					z-index: 40;
 					background: #DDF;
-					left: 300px;
-					top: 30px;
+					left: 10px;
+					top: 10px;
 					cursor: pointer;
 				}
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .goose-dead.node-<xsl:value-of select="b" /> {
 					z-index: 45;
 					background: #DDF;
-					left: 300px;
-					top: 30px;
+					left: 10px;
+					top: 10px;
 					cursor: pointer;
 				}
 				
@@ -113,6 +124,7 @@
 				<xsl:variable name="pid" select="position()"/>
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goosea-<xsl:value-of select="$gid" />.node-<xsl:value-of select="position()" /> {
 					z-index: 50;
+					
 				}
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goose-<xsl:value-of select="$gid" />-dead.node-<xsl:value-of select="position()" /> {
 					display: block;
@@ -120,12 +132,15 @@
 				<xsl:for-each select="neighbor">
 				#goose-<xsl:value-of select="$gid" />-a<xsl:value-of select="$pid" />:checked ~ div .goose-<xsl:value-of select="$gid" />.node-<xsl:value-of select="." /> {
 					z-index: 30;
-					background: #FDD;
+					background: #FBB;
+				}
+				#goose-<xsl:value-of select="$gid" />-a<xsl:value-of select="$pid" />:checked ~ div .goose-<xsl:value-of select="$gid" />.node-<xsl:value-of select="." /> * {
+					opacity: 0;
 				}
 				</xsl:for-each>
 				#goose-<xsl:value-of select="$gid" />-a<xsl:value-of select="$pid" />:checked ~ div .goose-<xsl:value-of select="$gid" />.node-<xsl:value-of select="$pid" /> {
 					z-index: 30;
-					background: #DFD;
+					--tsc: red;
 				}
 			</xsl:for-each>
 		</xsl:for-each>
@@ -133,6 +148,7 @@
 	</style>
 	</head>
 		<body>
+
 			<xsl:for-each select="node">
 				<xsl:variable name="pid" select="position()"/>
 				<input type="radio" name="fox">
@@ -184,20 +200,20 @@
 				<label>
 				<xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute>
 				<xsl:attribute name="class">node fox node-<xsl:value-of select="$pid" /></xsl:attribute>
-				F
+				🦊
 				</label>
 				<xsl:for-each select="neighbor">
 					<label>
 					<xsl:attribute name="for">fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." /></xsl:attribute>
 					<xsl:attribute name="class">node fox-m node-<xsl:value-of select="$pid" /> to-<xsl:value-of select="." /></xsl:attribute>
-					F
+					🦊
 					</label>
 				</xsl:for-each>
 				<xsl:for-each select="jump">
 					<label>
 					<xsl:attribute name="for">fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" /></xsl:attribute>
 					<xsl:attribute name="class">node fox-j node-<xsl:value-of select="$pid" /> b-<xsl:value-of select="b" /> c-<xsl:value-of select="c" /></xsl:attribute>
-					F
+					🦊
 					</label>
 				</xsl:for-each>
 			</xsl:for-each>
@@ -207,17 +223,17 @@
 					<label>
 					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
 					<xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
-					
+					<span>🪿</span>
 					</label>
 					<label>
 					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-a<xsl:value-of select="position()" /></xsl:attribute>
 					<xsl:attribute name="class">node goosea goosea-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
-					G
+					🪿
 					</label>
 					<label>
 					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute>
 					<xsl:attribute name="class">node goose-dead goose-<xsl:value-of select="$gid"/>-dead node-<xsl:value-of select="position()" /></xsl:attribute>
-					G
+					🪿
 					</label>
 				</xsl:for-each>
 

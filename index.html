@@ -6,12 +6,205 @@
 
 	<style>
 		iframe {
-			width: 100%;
+			width: 600px;
+			height: 600px;
+			z-index: 10000;
 			border: 0px;
+			position: absolute;
+			display: block;
+		}
+		#container {
+			display: block;
+			position: absolute;
+			top:0px;
+			left: 0px;
+		}
+		#bg {
+			display: block;
+			opacity: 0.75;
+			position: absolute;
+			height: 600px;
+			width: 600px;
+			top:0px;
+			left: 0px;
+		}
+		#game {
+			display: block;
+			position: absolute;
+			height: 600px;
+			width: 1200px;
+			top:0px;
+			left: 0px;
+		}
+		#menu {
+			display: block;
+			position: absolute;
+			top:620px;
+			left: 0px;
+		}
+		#circles {
+			pointer-events: none;
+		}
+		circle {
+			fill: white;
+			stroke: black;
+			stroke-width: 2;
+			cursor: pointer;
+			pointer-events: all;
+		}
+		circle.current {
+			stroke-width: 3;
+			stroke: red;
+		}
+		text {
+			--tsc: black;
+		}
+		circle.current + text {
+			--tsc: red;
+		}
+		tspan {
+			display: none;
+		}
+		tspan {
+			text-shadow: 1px 1px 1px var(--tsc), -1px -1px 1px var(--tsc), -1px 1px 1px var(--tsc), 1px -1px 1px var(--tsc), 2px 2px 2px var(--tsc), -2px -2px 2px var(--tsc), -2px 2px 2px var(--tsc), 2px -2px 2px var(--tsc);
+		}
+		circle.goose {
+			fill: #88F;
+			opacity: 0;
+		}
+		circle.goose + text tspan:nth-child(1) {
+			display: block;
+		}
+		circle.fox {
+			fill: #F88;
+			opacity: 0;
+		}
+		circle.fox + text tspan:nth-child(2) {
+			display: block;
+		}
+		#paths path, #pathsBG path {
+			fill: none;
+			stroke-width: 7;
+		}
+		
+		.line0 {
+			stroke: hsl(0,60%,40%);
+		}
+		.line1 {
+			stroke: hsl(40,60%,40%);
+		}
+		.line2 {
+			stroke: hsl(80,60%,40%);
+		}
+		.line3 {
+			stroke: hsl(120,60%,40%);
+		}
+		.line4 {
+			stroke: hsl(160,60%,40%);
+		}
+		.line5 {
+			stroke: hsl(200,60%,40%);
+		}
+		.line6 {
+			stroke: hsl(240,60%,40%);
+		}
+		.line7 {
+			stroke: hsl(280,60%,40%);
+		}
+		.line8 {
+			stroke: hsl(320,60%,40%);
+		}
+		#pathsBG path {
+			stroke: black;
+			stroke-width: 12;
+		}
+		#pathsBG .line1, #pathsBG .line4, #pathsBG .line7 {
+			stroke: #DDD;
+		}
+		#paths .line1, #paths .line4, #paths .line7 {
+			stroke-dasharray: 6 4;
+		}
+		#paths .line2, #paths .line5, #paths .line8 {
+			stroke-dasharray: 8 4;
 		}
 	</style>
 </head>
 <body>
+	<div id="container">
+	<svg id="bg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="svg20997" width="1250" height="1250" version="1.1" viewBox="0 75 1250 1250">
+		<defs id="defs20937">
+		  <filter id="filter12254" width="1" height="1" x="0" y="0" color-interpolation-filters="sRGB">
+			<feTurbulence id="feTurbulence20922" baseFrequency=".3" numOctaves="4" result="result4" type="fractalNoise"/>
+			<feDisplacementMap id="feDisplacementMap20924" in="SourceGraphic" in2="result4" result="result3" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+			<feDiffuseLighting id="feDiffuseLighting20928" in="result4" lighting-color="#E9E6D7" result="result1" surfaceScale="2">
+			  <feDistantLight id="feDistantLight20926" azimuth="235" elevation="40"/>
+			</feDiffuseLighting>
+			<feComposite id="feComposite20930" in="result3" in2="result1" operator="in" result="result2"/>
+			<feComposite id="feComposite20932" in2="result1" k1="1.7" operator="arithmetic" result="result5"/>
+			<feBlend id="feBlend20934" in="result5" in2="result3"/>
+		  </filter>
+		  <filter id="filter1225" width="1" height="1" x="0" y="0" color-interpolation-filters="sRGB">
+			<feTurbulence id="feTurbulence20922" baseFrequency=".0067" numOctaves="4" result="result4" type="fractalNoise"/>
+			<feDisplacementMap id="feDisplacementMap20924" in="SourceGraphic" in2="result4" result="result3" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+			<feDiffuseLighting id="feDiffuseLighting20928" in="result4" lighting-color="#E9E6D7" result="result1" surfaceScale="2">
+			  <feDistantLight id="feDistantLight20926" azimuth="235" elevation="40"/>
+			</feDiffuseLighting>
+			<feComposite id="feComposite20930" in="result3" in2="result1" operator="in" result="result2"/>
+			<feComposite id="feComposite20932" in2="result1" k1="1.7" operator="arithmetic" result="result5"/>
+			<feBlend id="feBlend20934" in="result5" in2="result3"/>
+		  </filter>
+		  <filter id="filter404" width="1" height="1" x="0" y="0" style="color-interpolation-filters:sRGB">
+			<feGaussianBlur id="feGaussianBlur394" result="result6" stdDeviation="5"/>
+			<feComposite id="feComposite396" in="SourceGraphic" in2="result6" operator="atop" result="result8"/>
+			<feComposite id="feComposite398" in="result8" in2="SourceAlpha" operator="over" result="result9"/>
+			<feColorMatrix id="feColorMatrix400" result="result10" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+			<feBlend id="feBlend402" in="result10" in2="result6" mode="normal"/>
+		  </filter>
+		</defs>
+		<style id="style20939" type="text/css">
+		  .st1{fill:#dc3d96}.st13{fill:#ee3981}.st21{fill:#f1da10}.st25{fill:#4f421a}.st32{fill:#f9ef5e}
+		</style>
+		<path id="rect20945" fill="#2328c2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.8" d="M-149-140h1640v1573H-149z" style="filter:url(#filter12254)"/>
+		<g  style="filter:url(#filter1225)">
+		<g id="g353" style="filter:url(#filter404)">
+		  <path id="path20947" fill="#0a530b" d="M1086 955c15 40-57-3-78-21-100-82 103-39 78 21z" class="st25"  style="fill:#00974a;fill-opacity:1"/>
+		  <path id="path20949" d="M1048 691c-13 23-9-4-29 31 40 42-41 15 3-26 8-8 23-14 26-5z" class="st13"  />
+		  <path id="path20951" d="M1110 716c-15 50-50-59-14-25 5 8 8 17 14 25z" class="st13"  />
+		  <path id="path20953" d="M1261 441c-8 79-87 38-128 60-51 6-120-61-137-101-2-20 86-64 111-76 84-7 140 67 154 117z"  style="fill:#94782d"/>
+		  <path id="path20955" d="M1089 254c-76-6-168-39-218-105-3-63-73-192 34-203 65 19 3 61 12 89 64 13-25 22-16 30 14 67 82 89 133 42 25-3 49 77 78 15 44-15 168-103 175-2-67 47-90 86-198 134z"  style="fill:#00974a"/>
+		  <path id="path20957" d="M56 1023c-43-18-76 66-124 11-11-68 16-139 53-195 12-39 60-13 92-21 58 33-6 150-21 205z"  style="fill:#f15a2c"/>
+		  <path id="path20959" d="M317 503c-22-10-72-26-38-38-19-14 23-10-17-18 31-28 84-11 107 3 44 25 46-21 34-64 30-1 41 56 91 30-21-38 92-22 66-87 23-8 100-46 107-44 73 2 83 227 87 320-7 47-134 166-119 204-130 58-282 15-254-24 36-35 48-211-5-218-17-26-38-52-59-64z"  style="fill:#f15b2a"/>
+		  <path id="path20961" fill="#f95ee9" d="M384 890c-5 119-99 182-162 211-76 36-110-36-141-107 20-105 17-175 96-235 39 22 120 30 153 42 51 56 59 66 54 89z" class="st32"  />
+		  <path id="path20963" fill="#de467b" d="M579 213c-3 42-85 64-26 89-57 45-139 4-202 11-23 33-61-6-93 18 27-35 77-64 126-65 34-31-50 11-57-33-78-12 32-45 60-52 17-47 31-89 6-129 26-20 58-122 81-46-12 46 66 108 35 127 38 15-16 80 45 53 12 3 25 14 25 27z" class="st1"  />
+		  <path id="path20965" d="M1281 805c-40 28-118 16-109-28-22-22-34-40-64-54 109-109 107-173 107-231 17-29 2-31 37-53 242 37 232 299 29 366z"  style="fill:#991d53"/>
+		  <path id="path20967" d="M1123 337c1-50-57-118-6-151 54 1 58-75 124-51 58 13 113 93 153 148 58 63 0 147-79 142-46-1-83 41-101-23-21-34-47-57-91-65z"  style="fill:#e8128c"/>
+		  <path id="path20969" d="M1346 1031c4 71-76-64-92 16-8 40 68 64 0 94 20 40-72 78-31 19 25-37-7-106-53-116-13-41-51-15-67-59-41-11-30-89-7-125 12 35 70 86 122 74-24 55 106 47 128 97z" class="st21"  />
+		  <path id="path20971" d="M1129 337c-31-6-119 28-123 60 10 55 95 131 139 73 70-10 96 36 64 101-14 71-50 121-103 152-4-73-145-24-78 21-31 69 117 78 54 155-1 84-51-32-93 14-69-25-35-130-127-134-56 15-131 122-184 54-54 11-58-68-46-93 55-26-38-57 6-91 51 27 63-42 65-76 58-67 4-161-48-207-28-33 53-61 12-85 13-40 54-116 54-34 54-2-30-78 41-76 40 10 30 5 54-14 33 16 24 15 54-10 65 44 145 62 223 72 19 36 26 79 36 118z" class="st25"  />
+		  <path id="path20973" d="M1197 1254c-32 57-99-32-148-33-3-66 96 0 133-42 57-14-24 53 15 74z" class="st21"  />
+		  <path id="path20975" d="M904 1033c-10 42-4 94-40 99-65 22-4-87-45-112 26-9 76-62 85 13z" class="st13"  />
+		  <path id="path20977" d="M892 923c-3 48-33 65-47 16-11-39 61-94 46-24z" class="st13"  />
+		  <path id="path20979" fill="#faf05f" d="M574 913c-2 61-136 41-144 92-20-20-42-4-98 22-53 0-24-84-6-112 52-70 132-86 211-49 22 4 60 24 37 47zm72-103c-14 27-86 19-74 80-27 81-120 15-157-24-31-24-72-78-3-66 62 35 132 43 189-5 16 3 28 16 45 15z"  style="fill:#f5865d;fill-opacity:1"/>
+		  <path id="path20981" fill="#de467b" fill-opacity=".9" d="M432 662c3 49-35 99-51 142-62 11 16-73 4-106 6-21 10-46 25-15-9-47-19-77-50-116 49-19 64 52 72 95z" class="st1"  style="fill:#dc3d96;fill-opacity:1"/>
+		  <path id="path20983" d="M430 1004c-45 33-52 82-39 123-50 12-39 73-93 68-44 72-129-4-192 30-81 68-49-110-140-77-111-19 26-101 42-149 48-21 139-11 136 69 24 36 64 39 95-14 57-26 121-37 174-64l9 5z"  style="fill:#b33ccd;fill-opacity:1"/>
+		  <path id="path20985" d="M377 807c20 15 50 53-1 64-43 62-26-37-75-20-11-27 30-75 76-44z"  style="fill:#003d2b"/>
+		  <path id="path20987" d="M176 758c2 63-52 102-45 169-5 43-82 106-83 40 9-38 38-68 49-99-33-43-133-13-104-84-24-34 9-56 46-48 12-43 82 25 121 15l8 4z"  style="fill:#a72f24"/>
+		  <path id="path20989" d="M-14 826z" class="st32"  />
+		  <path id="path20991" d="M38 992h2"  style="fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/>
+		  <path id="path20993" d="M936 841c35-11-27-44 0 0z" class="st13"  />
+		</g>
+		</g>
+		<g id="pathsBG" transform="scale(2.083333333)">
+
+			<path d="M95,560 L73,527" class="line0"></path><path d="M73,527 Q73,476 109,476" class="line0"></path><path d="M109,476 L112,406" class="line0"></path><path d="M112,406 L196,322" class="line0"></path><path d="M196,322 L240,266" class="line0"></path><path d="M240,266 L287,222" class="line0"></path><path d="M287,222 L322,156" class="line0"></path><path d="M322,156 L411,165" class="line0"></path><path d="M411,165 L503,171" class="line0"></path><path d="M503,171 L552,201" class="line0"></path><path d="M196,322 Q50,200 219,158" class="line1"></path><path d="M219,158 L249,137" class="line1"></path><path d="M249,137 L322,156" class="line1"></path><path d="M322,156 L328,205" class="line1"></path><path d="M328,205 L345,297" class="line1"></path><path d="M345,297 L340,403" class="line1"></path><path d="M340,403 L279,399" class="line1"></path><path d="M279,399 L240,380" class="line1"></path><path d="M240,380 L196,322" class="line1"></path><path d="M23,559 Q0,680 531,570" class="line2"></path><path d="M531,570 Q551,500 495,449" class="line2"></path><path d="M495,449 L340,403" class="line2"></path><path d="M340,403 L253,448" class="line2"></path><path d="M253,448 Q153,650 23,559" class="line2"></path><path d="M495,449 Q470,430 470,403" class="line3"></path><path d="M470,403 L475,372" class="line3"></path><path d="M475,372 L493,341" class="line3"></path><path d="M493,341 L585,268" class="line3"></path><path d="M585,268 L552,201" class="line3"></path><path d="M585,268 L499,222" class="line4"></path><path d="M499,222 L431,199" class="line4"></path><path d="M431,199 L328,205" class="line4"></path><path d="M328,205 L287,222" class="line4"></path><path d="M287,222 L249,200" class="line4"></path><path d="M249,200 L219,158" class="line4"></path><path d="M112,406 L180,432" class="line5"></path><path d="M180,432 L253,448" class="line5"></path><path d="M253,448 L279,399" class="line5"></path><path d="M279,399 L345,297" class="line5"></path><path d="M345,297 L434,330" class="line5"></path><path d="M434,330 L493,341" class="line5"></path><path d="M493,341 L499,222" class="line5"></path><path d="M499,222 L503,171" class="line5"></path><path d="M475,372 L432,364" class="line6"></path><path d="M432,364 L434,330" class="line6"></path><path d="M434,330 L431,199" class="line6"></path><path d="M431,199 L411,165" class="line6"></path><path d="M23,559 L73,527" class="line7"></path><path d="M73,527 Q109,527 109,476" class="line7"></path><path d="M109,476 L180,432" class="line7"></path><path d="M180,432 L196,322" class="line7"></path><path d="M531,570 L495,449" class="line8"></path><path d="M495,449 Q500,410 470,403" class="line8"></path><path d="M470,403 L432,364" class="line8"></path><path d="M432,364 L345,297" class="line8"></path><path d="M345,297 L287,222" class="line8"></path>
+		</g>
+		<g id="paths" transform="scale(2.083333333)">
+
+			<path d="M95,560 L73,527" class="line0"></path><path d="M73,527 Q73,476 109,476" class="line0"></path><path d="M109,476 L112,406" class="line0"></path><path d="M112,406 L196,322" class="line0"></path><path d="M196,322 L240,266" class="line0"></path><path d="M240,266 L287,222" class="line0"></path><path d="M287,222 L322,156" class="line0"></path><path d="M322,156 L411,165" class="line0"></path><path d="M411,165 L503,171" class="line0"></path><path d="M503,171 L552,201" class="line0"></path><path d="M196,322 Q50,200 219,158" class="line1"></path><path d="M219,158 L249,137" class="line1"></path><path d="M249,137 L322,156" class="line1"></path><path d="M322,156 L328,205" class="line1"></path><path d="M328,205 L345,297" class="line1"></path><path d="M345,297 L340,403" class="line1"></path><path d="M340,403 L279,399" class="line1"></path><path d="M279,399 L240,380" class="line1"></path><path d="M240,380 L196,322" class="line1"></path><path d="M23,559 Q0,680 531,570" class="line2"></path><path d="M531,570 Q551,500 495,449" class="line2"></path><path d="M495,449 L340,403" class="line2"></path><path d="M340,403 L253,448" class="line2"></path><path d="M253,448 Q153,650 23,559" class="line2"></path><path d="M495,449 Q470,430 470,403" class="line3"></path><path d="M470,403 L475,372" class="line3"></path><path d="M475,372 L493,341" class="line3"></path><path d="M493,341 L585,268" class="line3"></path><path d="M585,268 L552,201" class="line3"></path><path d="M585,268 L499,222" class="line4"></path><path d="M499,222 L431,199" class="line4"></path><path d="M431,199 L328,205" class="line4"></path><path d="M328,205 L287,222" class="line4"></path><path d="M287,222 L249,200" class="line4"></path><path d="M249,200 L219,158" class="line4"></path><path d="M112,406 L180,432" class="line5"></path><path d="M180,432 L253,448" class="line5"></path><path d="M253,448 L279,399" class="line5"></path><path d="M279,399 L345,297" class="line5"></path><path d="M345,297 L434,330" class="line5"></path><path d="M434,330 L493,341" class="line5"></path><path d="M493,341 L499,222" class="line5"></path><path d="M499,222 L503,171" class="line5"></path><path d="M475,372 L432,364" class="line6"></path><path d="M432,364 L434,330" class="line6"></path><path d="M434,330 L431,199" class="line6"></path><path d="M431,199 L411,165" class="line6"></path><path d="M23,559 L73,527" class="line7"></path><path d="M73,527 Q109,527 109,476" class="line7"></path><path d="M109,476 L180,432" class="line7"></path><path d="M180,432 L196,322" class="line7"></path><path d="M531,570 L495,449" class="line8"></path><path d="M495,449 Q500,410 470,403" class="line8"></path><path d="M470,403 L432,364" class="line8"></path><path d="M432,364 L345,297" class="line8"></path><path d="M345,297 L287,222" class="line8"></path>
+		</g>
+		
+		
+	</svg>
 	<iframe src="out.xml"  ></iframe>
+	</div>
 </body>
 </html>

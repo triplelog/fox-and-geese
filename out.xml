@@ -3,746 +3,756 @@
 <main>
 
 <node>
-	<x>0</x>
-	<y>0</y>
-	<z>1</z>
+	<x>531</x>
+	<y>570</y>
+	<z>0</z>
 	
+	
+	<neighbor>26</neighbor>
 	
 	<neighbor>2</neighbor>
 	
-	<neighbor>6</neighbor>
-	
-	<neighbor>7</neighbor>
+	<neighbor>2</neighbor>
 	
 	
+	
+	<jump><a>1</a><b>2</b><c>23</c></jump>
+	
+	<jump><a>1</a><b>26</b><c>32</c></jump>
 	
 	<jump><a>1</a><b>2</b><c>3</c></jump>
-	
-	<jump><a>1</a><b>6</b><c>11</c></jump>
-	
-	<jump><a>1</a><b>7</b><c>13</c></jump>
 	
 </node>
 
 <node>
-	<x>0</x>
-	<y>1</y>
-	<z>0</z>
+	<x>495</x>
+	<y>449</y>
+	<z>1</z>
 	
+	
+	<neighbor>1</neighbor>
+	
+	<neighbor>23</neighbor>
+	
+	<neighbor>3</neighbor>
 	
 	<neighbor>1</neighbor>
 	
 	<neighbor>3</neighbor>
 	
-	<neighbor>6</neighbor>
-	
-	<neighbor>7</neighbor>
-	
-	<neighbor>8</neighbor>
 	
 	
+	<jump><a>2</a><b>1</b><c>26</c></jump>
+	
+	<jump><a>2</a><b>23</b><c>32</c></jump>
 	
 	<jump><a>2</a><b>3</b><c>4</c></jump>
 	
-	<jump><a>2</a><b>7</b><c>12</c></jump>
-	
-	<jump><a>2</a><b>8</b><c>14</c></jump>
+	<jump><a>2</a><b>3</b><c>6</c></jump>
 	
 </node>
 
 <node>
-	<x>0</x>
-	<y>2</y>
-	<z>0</z>
+	<x>470</x>
+	<y>403</y>
+	<z>1</z>
 	
 	
 	<neighbor>2</neighbor>
 	
 	<neighbor>4</neighbor>
 	
-	<neighbor>7</neighbor>
+	<neighbor>2</neighbor>
 	
-	<neighbor>8</neighbor>
-	
-	<neighbor>9</neighbor>
+	<neighbor>6</neighbor>
 	
 	
-	
-	<jump><a>3</a><b>2</b><c>1</c></jump>
 	
 	<jump><a>3</a><b>4</b><c>5</c></jump>
 	
-	<jump><a>3</a><b>7</b><c>11</c></jump>
+	<jump><a>3</a><b>2</b><c>1</c></jump>
 	
-	<jump><a>3</a><b>8</b><c>13</c></jump>
-	
-	<jump><a>3</a><b>9</b><c>15</c></jump>
+	<jump><a>3</a><b>6</b><c>18</c></jump>
 	
 </node>
 
 <node>
-	<x>0</x>
-	<y>3</y>
-	<z>1</z>
+	<x>475</x>
+	<y>372</y>
+	<z>0</z>
 	
 	
 	<neighbor>3</neighbor>
 	
 	<neighbor>5</neighbor>
 	
-	<neighbor>8</neighbor>
-	
-	<neighbor>9</neighbor>
-	
-	<neighbor>10</neighbor>
+	<neighbor>6</neighbor>
 	
 	
 	
 	<jump><a>4</a><b>3</b><c>2</c></jump>
 	
-	<jump><a>4</a><b>8</b><c>12</c></jump>
+	<jump><a>4</a><b>5</b><c>14</c></jump>
 	
-	<jump><a>4</a><b>9</b><c>14</c></jump>
+	<jump><a>4</a><b>6</b><c>7</c></jump>
 	
 </node>
 
 <node>
-	<x>0</x>
-	<y>4</y>
+	<x>493</x>
+	<y>341</y>
 	<z>1</z>
 	
 	
 	<neighbor>4</neighbor>
 	
-	<neighbor>9</neighbor>
+	<neighbor>14</neighbor>
 	
-	<neighbor>10</neighbor>
+	<neighbor>7</neighbor>
+	
+	<neighbor>13</neighbor>
 	
 	
 	
 	<jump><a>5</a><b>4</b><c>3</c></jump>
 	
-	<jump><a>5</a><b>9</b><c>13</c></jump>
+	<jump><a>5</a><b>14</b><c>8</c></jump>
 	
-	<jump><a>5</a><b>10</b><c>15</c></jump>
+	<jump><a>5</a><b>7</b><c>18</c></jump>
 	
-</node>
-
-<node>
-	<x>1</x>
-	<y>0</y>
-	<z>1</z>
-	
-	
-	<neighbor>1</neighbor>
-	
-	<neighbor>2</neighbor>
-	
-	<neighbor>7</neighbor>
-	
-	<neighbor>11</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	
-	
-	<jump><a>6</a><b>7</b><c>8</c></jump>
-	
-	<jump><a>6</a><b>11</b><c>16</c></jump>
-	
-	<jump><a>6</a><b>12</b><c>18</c></jump>
+	<jump><a>5</a><b>13</b><c>9</c></jump>
 	
 </node>
 
 <node>
-	<x>1</x>
-	<y>1</y>
-	<z>1</z>
-	
-	
-	<neighbor>1</neighbor>
-	
-	<neighbor>2</neighbor>
-	
-	<neighbor>3</neighbor>
-	
-	<neighbor>6</neighbor>
-	
-	<neighbor>8</neighbor>
-	
-	<neighbor>11</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>13</neighbor>
-	
-	
-	
-	<jump><a>7</a><b>8</b><c>9</c></jump>
-	
-	<jump><a>7</a><b>12</b><c>17</c></jump>
-	
-	<jump><a>7</a><b>13</b><c>19</c></jump>
-	
-</node>
-
-<node>
-	<x>1</x>
-	<y>2</y>
+	<x>432</x>
+	<y>364</y>
 	<z>0</z>
 	
-	
-	<neighbor>2</neighbor>
-	
-	<neighbor>3</neighbor>
 	
 	<neighbor>4</neighbor>
 	
 	<neighbor>7</neighbor>
 	
+	<neighbor>3</neighbor>
+	
+	<neighbor>18</neighbor>
+	
+	
+	
+	<jump><a>6</a><b>7</b><c>11</c></jump>
+	
+	<jump><a>6</a><b>3</b><c>2</c></jump>
+	
+	<jump><a>6</a><b>18</b><c>17</c></jump>
+	
+</node>
+
+<node>
+	<x>434</x>
+	<y>330</y>
+	<z>0</z>
+	
+	
+	<neighbor>18</neighbor>
+	
+	<neighbor>5</neighbor>
+	
+	<neighbor>6</neighbor>
+	
+	<neighbor>11</neighbor>
+	
+	
+	
+	<jump><a>7</a><b>18</b><c>22</c></jump>
+	
+	<jump><a>7</a><b>5</b><c>13</c></jump>
+	
+	<jump><a>7</a><b>6</b><c>4</c></jump>
+	
+	<jump><a>7</a><b>11</b><c>10</c></jump>
+	
+</node>
+
+<node>
+	<x>552</x>
+	<y>201</y>
+	<z>0</z>
+	
+	
 	<neighbor>9</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>13</neighbor>
 	
 	<neighbor>14</neighbor>
 	
 	
-	
-	<jump><a>8</a><b>7</b><c>6</c></jump>
 	
 	<jump><a>8</a><b>9</b><c>10</c></jump>
 	
-	<jump><a>8</a><b>12</b><c>16</c></jump>
-	
-	<jump><a>8</a><b>13</b><c>18</c></jump>
-	
-	<jump><a>8</a><b>14</b><c>20</c></jump>
+	<jump><a>8</a><b>14</b><c>5</c></jump>
 	
 </node>
 
 <node>
-	<x>1</x>
-	<y>3</y>
-	<z>1</z>
-	
-	
-	<neighbor>3</neighbor>
-	
-	<neighbor>4</neighbor>
-	
-	<neighbor>5</neighbor>
-	
-	<neighbor>8</neighbor>
-	
-	<neighbor>10</neighbor>
-	
-	<neighbor>13</neighbor>
-	
-	<neighbor>14</neighbor>
-	
-	<neighbor>15</neighbor>
-	
-	
-	
-	<jump><a>9</a><b>8</b><c>7</c></jump>
-	
-	<jump><a>9</a><b>13</b><c>17</c></jump>
-	
-	<jump><a>9</a><b>14</b><c>19</c></jump>
-	
-</node>
-
-<node>
-	<x>1</x>
-	<y>4</y>
+	<x>503</x>
+	<y>171</y>
 	<z>0</z>
 	
 	
-	<neighbor>4</neighbor>
+	<neighbor>10</neighbor>
 	
-	<neighbor>5</neighbor>
+	<neighbor>8</neighbor>
+	
+	<neighbor>13</neighbor>
+	
+	
+	
+	<jump><a>9</a><b>10</b><c>12</c></jump>
+	
+	<jump><a>9</a><b>13</b><c>5</c></jump>
+	
+</node>
+
+<node>
+	<x>411</x>
+	<y>165</y>
+	<z>0</z>
+	
+	
+	<neighbor>12</neighbor>
 	
 	<neighbor>9</neighbor>
 	
-	<neighbor>14</neighbor>
-	
-	<neighbor>15</neighbor>
+	<neighbor>11</neighbor>
 	
 	
+	
+	<jump><a>10</a><b>12</b><c>17</c></jump>
 	
 	<jump><a>10</a><b>9</b><c>8</c></jump>
 	
-	<jump><a>10</a><b>14</b><c>18</c></jump>
-	
-	<jump><a>10</a><b>15</b><c>20</c></jump>
+	<jump><a>10</a><b>11</b><c>7</c></jump>
 	
 </node>
 
 <node>
-	<x>2</x>
-	<y>0</y>
-	<z>0</z>
-	
-	
-	<neighbor>6</neighbor>
-	
-	<neighbor>7</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>16</neighbor>
-	
-	<neighbor>17</neighbor>
-	
-	
-	
-	<jump><a>11</a><b>6</b><c>1</c></jump>
-	
-	<jump><a>11</a><b>7</b><c>3</c></jump>
-	
-	<jump><a>11</a><b>12</b><c>13</c></jump>
-	
-	<jump><a>11</a><b>16</b><c>21</c></jump>
-	
-	<jump><a>11</a><b>17</b><c>23</c></jump>
-	
-</node>
-
-<node>
-	<x>2</x>
-	<y>1</y>
+	<x>431</x>
+	<y>199</y>
 	<z>1</z>
 	
-	
-	<neighbor>6</neighbor>
-	
-	<neighbor>7</neighbor>
-	
-	<neighbor>8</neighbor>
-	
-	<neighbor>11</neighbor>
 	
 	<neighbor>13</neighbor>
 	
-	<neighbor>16</neighbor>
-	
-	<neighbor>17</neighbor>
-	
-	<neighbor>18</neighbor>
-	
-	
-	
-	<jump><a>12</a><b>7</b><c>2</c></jump>
-	
-	<jump><a>12</a><b>8</b><c>4</c></jump>
-	
-	<jump><a>12</a><b>13</b><c>14</c></jump>
-	
-	<jump><a>12</a><b>17</b><c>22</c></jump>
-	
-	<jump><a>12</a><b>18</b><c>24</c></jump>
-	
-</node>
-
-<node>
-	<x>2</x>
-	<y>2</y>
-	<z>1</z>
-	
+	<neighbor>25</neighbor>
 	
 	<neighbor>7</neighbor>
 	
-	<neighbor>8</neighbor>
-	
-	<neighbor>9</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>14</neighbor>
-	
-	<neighbor>17</neighbor>
-	
-	<neighbor>18</neighbor>
-	
-	<neighbor>19</neighbor>
+	<neighbor>10</neighbor>
 	
 	
 	
-	<jump><a>13</a><b>7</b><c>1</c></jump>
+	<jump><a>11</a><b>13</b><c>14</c></jump>
 	
-	<jump><a>13</a><b>8</b><c>3</c></jump>
+	<jump><a>11</a><b>25</b><c>17</c></jump>
 	
-	<jump><a>13</a><b>9</b><c>5</c></jump>
-	
-	<jump><a>13</a><b>12</b><c>11</c></jump>
-	
-	<jump><a>13</a><b>14</b><c>15</c></jump>
-	
-	<jump><a>13</a><b>17</b><c>21</c></jump>
-	
-	<jump><a>13</a><b>18</b><c>23</c></jump>
-	
-	<jump><a>13</a><b>19</b><c>25</c></jump>
+	<jump><a>11</a><b>7</b><c>6</c></jump>
 	
 </node>
 
 <node>
-	<x>2</x>
-	<y>3</y>
+	<x>322</x>
+	<y>156</y>
+	<z>0</z>
+	
+	
+	<neighbor>17</neighbor>
+	
+	<neighbor>10</neighbor>
+	
+	<neighbor>15</neighbor>
+	
+	<neighbor>25</neighbor>
+	
+	
+	
+	<jump><a>12</a><b>17</b><c>19</c></jump>
+	
+	<jump><a>12</a><b>10</b><c>9</c></jump>
+	
+	<jump><a>12</a><b>15</b><c>16</c></jump>
+	
+	<jump><a>12</a><b>25</b><c>18</c></jump>
+	
+</node>
+
+<node>
+	<x>499</x>
+	<y>222</y>
+	<z>0</z>
+	
+	
+	<neighbor>14</neighbor>
+	
+	<neighbor>11</neighbor>
+	
+	<neighbor>5</neighbor>
+	
+	<neighbor>9</neighbor>
+	
+	
+	
+	<jump><a>13</a><b>11</b><c>25</c></jump>
+	
+	<jump><a>13</a><b>5</b><c>7</c></jump>
+	
+</node>
+
+<node>
+	<x>585</x>
+	<y>268</y>
+	<z>1</z>
+	
+	
+	<neighbor>5</neighbor>
+	
+	<neighbor>8</neighbor>
+	
+	<neighbor>13</neighbor>
+	
+	
+	
+	<jump><a>14</a><b>5</b><c>4</c></jump>
+	
+	<jump><a>14</a><b>13</b><c>11</c></jump>
+	
+</node>
+
+<node>
+	<x>249</x>
+	<y>137</y>
 	<z>2</z>
 	
 	
-	<neighbor>8</neighbor>
+	<neighbor>16</neighbor>
 	
-	<neighbor>9</neighbor>
-	
-	<neighbor>10</neighbor>
-	
-	<neighbor>13</neighbor>
-	
-	<neighbor>15</neighbor>
-	
-	<neighbor>18</neighbor>
-	
-	<neighbor>19</neighbor>
-	
-	<neighbor>20</neighbor>
+	<neighbor>12</neighbor>
 	
 	
 	
-	<jump><a>14</a><b>8</b><c>2</c></jump>
+	<jump><a>15</a><b>16</b><c>20</c></jump>
 	
-	<jump><a>14</a><b>9</b><c>4</c></jump>
-	
-	<jump><a>14</a><b>13</b><c>12</c></jump>
-	
-	<jump><a>14</a><b>18</b><c>22</c></jump>
-	
-	<jump><a>14</a><b>19</b><c>24</c></jump>
+	<jump><a>15</a><b>12</b><c>25</c></jump>
 	
 </node>
 
 <node>
-	<x>2</x>
-	<y>4</y>
-	<z>0</z>
-	
-	
-	<neighbor>9</neighbor>
-	
-	<neighbor>10</neighbor>
-	
-	<neighbor>14</neighbor>
-	
-	<neighbor>19</neighbor>
-	
-	<neighbor>20</neighbor>
-	
-	
-	
-	<jump><a>15</a><b>9</b><c>3</c></jump>
-	
-	<jump><a>15</a><b>10</b><c>5</c></jump>
-	
-	<jump><a>15</a><b>14</b><c>13</c></jump>
-	
-	<jump><a>15</a><b>19</b><c>23</c></jump>
-	
-	<jump><a>15</a><b>20</b><c>25</c></jump>
-	
-</node>
-
-<node>
-	<x>3</x>
-	<y>0</y>
+	<x>219</x>
+	<y>158</y>
 	<z>1</z>
 	
 	
-	<neighbor>11</neighbor>
+	<neighbor>20</neighbor>
 	
-	<neighbor>12</neighbor>
+	<neighbor>15</neighbor>
 	
-	<neighbor>17</neighbor>
-	
-	<neighbor>21</neighbor>
-	
-	<neighbor>22</neighbor>
+	<neighbor>24</neighbor>
 	
 	
 	
-	<jump><a>16</a><b>11</b><c>6</c></jump>
+	<jump><a>16</a><b>15</b><c>12</c></jump>
 	
-	<jump><a>16</a><b>12</b><c>8</c></jump>
+	<jump><a>16</a><b>20</b><c>21</c></jump>
 	
-	<jump><a>16</a><b>17</b><c>18</c></jump>
+	<jump><a>16</a><b>24</b><c>17</c></jump>
 	
 </node>
 
 <node>
-	<x>3</x>
-	<y>1</y>
+	<x>287</x>
+	<y>222</y>
+	<z>0</z>
+	
+	
+	<neighbor>19</neighbor>
+	
+	<neighbor>12</neighbor>
+	
+	<neighbor>25</neighbor>
+	
+	<neighbor>24</neighbor>
+	
+	<neighbor>18</neighbor>
+	
+	
+	
+	<jump><a>17</a><b>19</b><c>20</c></jump>
+	
+	<jump><a>17</a><b>12</b><c>10</c></jump>
+	
+	<jump><a>17</a><b>25</b><c>11</c></jump>
+	
+	<jump><a>17</a><b>24</b><c>16</c></jump>
+	
+	<jump><a>17</a><b>18</b><c>6</c></jump>
+	
+</node>
+
+<node>
+	<x>345</x>
+	<y>297</y>
 	<z>1</z>
 	
 	
-	<neighbor>11</neighbor>
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>13</neighbor>
-	
-	<neighbor>16</neighbor>
-	
-	<neighbor>18</neighbor>
-	
-	<neighbor>21</neighbor>
-	
-	<neighbor>22</neighbor>
+	<neighbor>25</neighbor>
 	
 	<neighbor>23</neighbor>
 	
+	<neighbor>22</neighbor>
 	
+	<neighbor>7</neighbor>
 	
-	<jump><a>17</a><b>12</b><c>7</c></jump>
-	
-	<jump><a>17</a><b>13</b><c>9</c></jump>
-	
-	<jump><a>17</a><b>18</b><c>19</c></jump>
-	
-</node>
-
-<node>
-	<x>3</x>
-	<y>2</y>
-	<z>0</z>
-	
-	
-	<neighbor>12</neighbor>
-	
-	<neighbor>13</neighbor>
-	
-	<neighbor>14</neighbor>
+	<neighbor>6</neighbor>
 	
 	<neighbor>17</neighbor>
 	
-	<neighbor>19</neighbor>
-	
-	<neighbor>22</neighbor>
-	
-	<neighbor>23</neighbor>
-	
-	<neighbor>24</neighbor>
 	
 	
+	<jump><a>18</a><b>25</b><c>12</c></jump>
 	
-	<jump><a>18</a><b>12</b><c>6</c></jump>
+	<jump><a>18</a><b>23</b><c>22</c></jump>
 	
-	<jump><a>18</a><b>13</b><c>8</c></jump>
+	<jump><a>18</a><b>22</b><c>32</c></jump>
 	
-	<jump><a>18</a><b>14</b><c>10</c></jump>
+	<jump><a>18</a><b>7</b><c>5</c></jump>
 	
-	<jump><a>18</a><b>17</b><c>16</c></jump>
-	
-	<jump><a>18</a><b>19</b><c>20</c></jump>
+	<jump><a>18</a><b>6</b><c>3</c></jump>
 	
 </node>
 
 <node>
-	<x>3</x>
-	<y>3</y>
+	<x>240</x>
+	<y>266</y>
 	<z>0</z>
 	
-	
-	<neighbor>13</neighbor>
-	
-	<neighbor>14</neighbor>
-	
-	<neighbor>15</neighbor>
-	
-	<neighbor>18</neighbor>
 	
 	<neighbor>20</neighbor>
 	
-	<neighbor>23</neighbor>
-	
-	<neighbor>24</neighbor>
-	
-	<neighbor>25</neighbor>
+	<neighbor>17</neighbor>
 	
 	
 	
-	<jump><a>19</a><b>13</b><c>7</c></jump>
+	<jump><a>19</a><b>20</b><c>30</c></jump>
 	
-	<jump><a>19</a><b>14</b><c>9</c></jump>
-	
-	<jump><a>19</a><b>18</b><c>17</c></jump>
+	<jump><a>19</a><b>17</b><c>12</c></jump>
 	
 </node>
 
 <node>
-	<x>3</x>
-	<y>4</y>
-	<z>0</z>
+	<x>196</x>
+	<y>322</y>
+	<z>1</z>
 	
 	
-	<neighbor>14</neighbor>
-	
-	<neighbor>15</neighbor>
+	<neighbor>30</neighbor>
 	
 	<neighbor>19</neighbor>
 	
-	<neighbor>24</neighbor>
+	<neighbor>16</neighbor>
 	
-	<neighbor>25</neighbor>
+	<neighbor>21</neighbor>
+	
+	<neighbor>31</neighbor>
 	
 	
 	
-	<jump><a>20</a><b>14</b><c>8</c></jump>
+	<jump><a>20</a><b>30</b><c>29</c></jump>
 	
-	<jump><a>20</a><b>15</b><c>10</c></jump>
+	<jump><a>20</a><b>19</b><c>17</c></jump>
 	
-	<jump><a>20</a><b>19</b><c>18</c></jump>
+	<jump><a>20</a><b>16</b><c>15</c></jump>
+	
+	<jump><a>20</a><b>21</b><c>22</c></jump>
+	
+	<jump><a>20</a><b>31</b><c>29</c></jump>
 	
 </node>
 
 <node>
-	<x>4</x>
-	<y>0</y>
-	<z>0</z>
+	<x>240</x>
+	<y>380</y>
+	<z>1</z>
 	
-	
-	<neighbor>16</neighbor>
-	
-	<neighbor>17</neighbor>
 	
 	<neighbor>22</neighbor>
 	
+	<neighbor>20</neighbor>
 	
 	
-	<jump><a>21</a><b>16</b><c>11</c></jump>
-	
-	<jump><a>21</a><b>17</b><c>13</c></jump>
 	
 	<jump><a>21</a><b>22</b><c>23</c></jump>
 	
+	<jump><a>21</a><b>20</b><c>16</c></jump>
+	
 </node>
 
 <node>
-	<x>4</x>
-	<y>1</y>
+	<x>279</x>
+	<y>399</y>
 	<z>0</z>
 	
 	
-	<neighbor>16</neighbor>
-	
-	<neighbor>17</neighbor>
-	
-	<neighbor>18</neighbor>
+	<neighbor>23</neighbor>
 	
 	<neighbor>21</neighbor>
 	
-	<neighbor>23</neighbor>
-	
-	
-	
-	<jump><a>22</a><b>17</b><c>12</c></jump>
-	
-	<jump><a>22</a><b>18</b><c>14</c></jump>
-	
-	<jump><a>22</a><b>23</b><c>24</c></jump>
-	
-</node>
-
-<node>
-	<x>4</x>
-	<y>2</y>
-	<z>1</z>
-	
-	
-	<neighbor>17</neighbor>
+	<neighbor>32</neighbor>
 	
 	<neighbor>18</neighbor>
 	
-	<neighbor>19</neighbor>
-	
-	<neighbor>22</neighbor>
-	
-	<neighbor>24</neighbor>
 	
 	
+	<jump><a>22</a><b>23</b><c>18</c></jump>
 	
-	<jump><a>23</a><b>17</b><c>11</c></jump>
+	<jump><a>22</a><b>21</b><c>20</c></jump>
 	
-	<jump><a>23</a><b>18</b><c>13</c></jump>
+	<jump><a>22</a><b>32</b><c>31</c></jump>
 	
-	<jump><a>23</a><b>19</b><c>15</c></jump>
-	
-	<jump><a>23</a><b>22</b><c>21</c></jump>
-	
-	<jump><a>23</a><b>24</b><c>25</c></jump>
+	<jump><a>22</a><b>18</b><c>7</c></jump>
 	
 </node>
 
 <node>
-	<x>4</x>
-	<y>3</y>
+	<x>340</x>
+	<y>403</y>
 	<z>0</z>
 	
 	
 	<neighbor>18</neighbor>
 	
-	<neighbor>19</neighbor>
+	<neighbor>22</neighbor>
 	
-	<neighbor>20</neighbor>
+	<neighbor>2</neighbor>
 	
-	<neighbor>23</neighbor>
-	
-	<neighbor>25</neighbor>
+	<neighbor>32</neighbor>
 	
 	
 	
-	<jump><a>24</a><b>18</b><c>12</c></jump>
+	<jump><a>23</a><b>18</b><c>25</c></jump>
 	
-	<jump><a>24</a><b>19</b><c>14</c></jump>
+	<jump><a>23</a><b>22</b><c>21</c></jump>
 	
-	<jump><a>24</a><b>23</b><c>22</c></jump>
+	<jump><a>23</a><b>2</b><c>1</c></jump>
+	
+	<jump><a>23</a><b>32</b><c>26</c></jump>
 	
 </node>
 
 <node>
-	<x>4</x>
-	<y>4</y>
+	<x>249</x>
+	<y>200</y>
+	<z>0</z>
+	
+	
+	<neighbor>17</neighbor>
+	
+	<neighbor>16</neighbor>
+	
+	
+	
+	<jump><a>24</a><b>17</b><c>25</c></jump>
+	
+</node>
+
+<node>
+	<x>328</x>
+	<y>205</y>
+	<z>0</z>
+	
+	
+	<neighbor>12</neighbor>
+	
+	<neighbor>18</neighbor>
+	
+	<neighbor>11</neighbor>
+	
+	<neighbor>17</neighbor>
+	
+	
+	
+	<jump><a>25</a><b>12</b><c>15</c></jump>
+	
+	<jump><a>25</a><b>18</b><c>23</c></jump>
+	
+	<jump><a>25</a><b>11</b><c>13</c></jump>
+	
+	<jump><a>25</a><b>17</b><c>24</c></jump>
+	
+</node>
+
+<node>
+	<x>23</x>
+	<y>559</y>
+	<z>0</z>
+	
+	
+	<neighbor>1</neighbor>
+	
+	<neighbor>32</neighbor>
+	
+	<neighbor>28</neighbor>
+	
+	
+	
+	<jump><a>26</a><b>1</b><c>2</c></jump>
+	
+	<jump><a>26</a><b>32</b><c>23</c></jump>
+	
+	<jump><a>26</a><b>28</b><c>29</c></jump>
+	
+</node>
+
+<node>
+	<x>95</x>
+	<y>560</y>
 	<z>1</z>
 	
 	
-	<neighbor>19</neighbor>
+	<neighbor>28</neighbor>
+	
+	
+	
+	<jump><a>27</a><b>28</b><c>29</c></jump>
+	
+</node>
+
+<node>
+	<x>73</x>
+	<y>527</y>
+	<z>1</z>
+	
+	
+	<neighbor>27</neighbor>
+	
+	<neighbor>29</neighbor>
+	
+	<neighbor>26</neighbor>
+	
+	<neighbor>29</neighbor>
+	
+	
+	
+	<jump><a>28</a><b>29</b><c>30</c></jump>
+	
+	<jump><a>28</a><b>29</b><c>31</c></jump>
+	
+</node>
+
+<node>
+	<x>109</x>
+	<y>476</y>
+	<z>0</z>
+	
+	
+	<neighbor>28</neighbor>
+	
+	<neighbor>30</neighbor>
+	
+	<neighbor>28</neighbor>
+	
+	<neighbor>31</neighbor>
+	
+	
+	
+	<jump><a>29</a><b>28</b><c>27</c></jump>
+	
+	<jump><a>29</a><b>30</b><c>20</c></jump>
+	
+	<jump><a>29</a><b>28</b><c>26</c></jump>
+	
+	<jump><a>29</a><b>31</b><c>20</c></jump>
+	
+</node>
+
+<node>
+	<x>112</x>
+	<y>406</y>
+	<z>0</z>
+	
+	
+	<neighbor>29</neighbor>
 	
 	<neighbor>20</neighbor>
 	
-	<neighbor>24</neighbor>
+	<neighbor>31</neighbor>
 	
 	
 	
-	<jump><a>25</a><b>19</b><c>13</c></jump>
+	<jump><a>30</a><b>29</b><c>28</c></jump>
 	
-	<jump><a>25</a><b>20</b><c>15</c></jump>
+	<jump><a>30</a><b>20</b><c>19</c></jump>
 	
-	<jump><a>25</a><b>24</b><c>23</c></jump>
+	<jump><a>30</a><b>31</b><c>32</c></jump>
+	
+</node>
+
+<node>
+	<x>180</x>
+	<y>432</y>
+	<z>0</z>
+	
+	
+	<neighbor>30</neighbor>
+	
+	<neighbor>32</neighbor>
+	
+	<neighbor>29</neighbor>
+	
+	<neighbor>20</neighbor>
+	
+	
+	
+	<jump><a>31</a><b>32</b><c>22</c></jump>
+	
+	<jump><a>31</a><b>29</b><c>28</c></jump>
+	
+</node>
+
+<node>
+	<x>253</x>
+	<y>448</y>
+	<z>1</z>
+	
+	
+	<neighbor>23</neighbor>
+	
+	<neighbor>26</neighbor>
+	
+	<neighbor>31</neighbor>
+	
+	<neighbor>22</neighbor>
+	
+	
+	
+	<jump><a>32</a><b>23</b><c>2</c></jump>
+	
+	<jump><a>32</a><b>26</b><c>1</c></jump>
+	
+	<jump><a>32</a><b>31</b><c>30</c></jump>
+	
+	<jump><a>32</a><b>22</b><c>18</c></jump>
 	
 </node>
 
 
 
-<goose>1</goose>
+
+
+<goose>2</goose>
 
 
 
+<goose>3</goose>
 
 
-
-
-<goose>4</goose>
 
 
 
@@ -750,17 +760,6 @@
 
 
 
-<goose>6</goose>
-
-
-
-<goose>7</goose>
-
-
-
-
-
-<goose>9</goose>
 
 
 
@@ -768,13 +767,18 @@
 
 
 
-<goose>12</goose>
 
 
 
-<goose>13</goose>
+<goose>11</goose>
 
 
+
+
+
+
+
+<goose>14</goose>
 
 
 
@@ -784,7 +788,19 @@
 
 
 
-<goose>17</goose>
+
+
+<goose>18</goose>
+
+
+
+
+
+<goose>20</goose>
+
+
+
+<goose>21</goose>
 
 
 
@@ -798,13 +814,21 @@
 
 
 
-<goose>23</goose>
+<goose>27</goose>
+
+
+
+<goose>28</goose>
 
 
 
 
 
-<goose>25</goose>
+
+
+
+
+<goose>32</goose>
 
 
 </main>

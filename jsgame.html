@@ -10,19 +10,6 @@
 			position: absolute;
 			top:0px;
 			left: 0px;
-			/*top:50px;
-			left: -200px;
-			--iso: 10;
-			transform: translate(0px,-20%) rotate(calc(-1deg * var(--iso))) skewX(calc(1deg * var(--iso))) scaleY(calc(cos(1deg * var(--iso))));*/
-		}
-		img {
-			display: block;
-			opacity: 0.75;
-			position: absolute;
-			height: 600px;
-			top:50px;
-			left: -50px;
-			transform: rotate(20deg) scale(0.9,1.15);
 		}
 		#bg {
 			display: block;
@@ -61,11 +48,17 @@
 			stroke-width: 3;
 			stroke: red;
 		}
+		text {
+			--tsc: black;
+		}
+		circle.current + text {
+			--tsc: red;
+		}
 		tspan {
 			display: none;
 		}
 		tspan {
-			text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black, 2px 2px 2px black, -2px -2px 2px black, -2px 2px 2px black, 2px -2px 2px black;
+			text-shadow: 1px 1px 1px var(--tsc), -1px -1px 1px var(--tsc), -1px 1px 1px var(--tsc), 1px -1px 1px var(--tsc), 2px 2px 2px var(--tsc), -2px -2px 2px var(--tsc), -2px 2px 2px var(--tsc), 2px -2px 2px var(--tsc);
 		}
 		circle.goose {
 			fill: #88F;
@@ -219,32 +212,63 @@
 		let lines = [[26,27,28,29,19,18,16,11,9,8,7],[19,15,14,11,24,17,22,21,20,19],[25,0,1,22,31,25],[1,2,3,4,13,7],[13,12,10,24,16,23,15],[29,30,31,21,17,6,4,12,8],[3,5,6,10,9],[25,27,28,30,19],[0,1,2,5,17,16]];
 		let moves = [];
 		let jumps = [];
+		let movesT = [];
 		for (var i=0;i<32;i++){
 			moves.push(new Set());
 			jumps.push(new Set());
+			movesT.push(new Set());
 		}
 		for (var i=0;i<lines.length;i++){
 			for (var j=1;j<lines[i].length;j++){
 				let a = lines[i][j-1];
 				let b = lines[i][j];
-				if (moves[a].has(b)){
-					console.log(a,b,i)
-				}
 				moves[a].add(b);
 				moves[b].add(a);
+				movesT[a].add(b);
+				movesT[b].add(a);
+			}
+		}
+		for (var i=0;i<lines.length;i++){
+			for (var j=1;j<lines[i].length;j++){
+				let a = lines[i][j-1];
+				let b = lines[i][j];
 				
 				if (j<lines[i].length-1){
 					let c = lines[i][j+1];
 					jumps[a].add([b,c]);
 					jumps[c].add([b,a]);
+					movesT[a].delete(b);
+					movesT[c].delete(b);
 				}
 				else if (lines[i][j] == lines[i][0]){
 					let c = lines[i][1];
 					jumps[a].add([b,c]);
 					jumps[c].add([b,a]);
+					movesT[a].delete(b);
+					movesT[c].delete(b);
 				}
 			}
 		}
+		let scores = {0:{d:0,m:moves[0].size}};
+		for (var i=1;i<100;i++){
+			for (var j=0;j<32;j++){
+				let mv = Infinity;
+				if (scores[j]){mv = scores[j].d-1;}
+				for (var k in scores){
+					if (moves[j].has(parseInt(k))){
+						if (scores[k].d<mv){
+							mv = scores[k].d;
+						}
+					}
+				}
+				if (mv < Infinity){
+					scores[j]={d:mv+1,m:moves[j].size}
+				}
+				
+			}
+		}
+		let scoresF = [17,7,8,20,19,19,9,5,9,20,22,14,6,8,9,13,6,13,3,6,7,11,7,9,19,8,20,11,17,13,9,13];
+		let scoresFT = [[10,8,7,8],[11,13,9,17]];
 		function move(occupied,start,end){
 			return occupied + end - start;
 		}
@@ -256,13 +280,13 @@
 		for (var i=0;i<32;i++){
 			if (i < 16){
 				occupied += 1 << i;
-			}
-			if (i < 15){
-				document.getElementById('node-'+i).classList.add('goose');
+				if (i != 14){
+					document.getElementById('node-'+i).classList.add('goose');
+				}
 			}
 			document.getElementById('node-'+i).addEventListener('click',clickCity);
 		}
-		let fox = 15;
+		let fox = 14;
 		document.getElementById('node-'+fox).classList.add('fox');
 
 
@@ -281,7 +305,7 @@
 				document.getElementById('node-'+currentGoose).classList.remove('goose');
 				document.getElementById('node-'+currentGoose).classList.remove('current');
 				currentGoose = -1;
-				let minEval = foxTurn(occupied,fox);
+				let minEval = foxTurn(occupied,fox,2);
 				if (!minEval){return;}
 				if (minEval.type == 0){
 					occupied = move(occupied,1<<fox, 1<<minEval.k);
