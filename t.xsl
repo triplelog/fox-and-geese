@@ -1,11 +1,4 @@
-<?xml version="1.0"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:variable name="base" select="document('base.xml')"/>
-<xsl:template match="/">
-	<xsl:variable name="geese" select="g"/>
-	<html>
-	<head>
-	<style>
+<?xml version="1.0"?><xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"><xsl:variable name="base" select="document('base.xml')"/><xsl:template match="/"><xsl:variable name="geese" select="g"/><html><head><style>
 	input {
 		display: none;
 	}
@@ -53,26 +46,12 @@
 		left: 0px;
 		
 	}
-	.gt {
+	.gt, .ft {
 		display: block;
 		animation-name: turn;
   		animation-duration: 60s;
 		animation-timing-function: linear;
 		z-index: 60;
-	}
-	.ft {
-		display: block;
-		animation-name: turn;
-  		animation-duration: 60s;
-		animation-timing-function: linear;
-		z-index: 60;
-	}
-	.ft {
-		<xsl:for-each select="$base/main/node">--v<xsl:value-of select="position()"/>: <xsl:value-of select="s"/>;
-		</xsl:for-each>
-		<xsl:for-each select="$base/main/node">--g<xsl:value-of select="position()"/>: 0;
-		</xsl:for-each>
-		--f: 15;
 	}
 	label {
 		font-size: calc(var(--ww) * 0.45);
@@ -118,14 +97,9 @@
 			background: #CCC;
 		}
 		.blank {
-			cursor: unset;
 			z-index: 1;
 		}
-		.fox, .fox-a {
-			z-index: 0;
-			cursor: unset;
-		}
-		.goose, .goosea, .goose-dead {
+		.goose, .goosea, .goose-dead, .fox, .fox-a {
 			z-index: 0;
 		}
 		.goose-dead {
@@ -134,21 +108,19 @@
 		.goose-dead, .fox-m, .fox-j {
 			opacity: 0;
 		}
-		.ft .goosea {
+		.ft .goosea, .fox, .fox-a, .blank {
 			cursor: default;
 		}
-		
-		.gi:active ~ .gt {
+		.fi:active ~ .ft, .gi:active ~ .gt, .fi:active ~ .gt #clock > div {
 			z-index: 80;
 			animation-name: none;
 		}
-		.fi:active ~ .ft {
-			z-index: 80;
-			animation-name: none;
-		}
-		.fi:active ~ .gt #clock > div {
-			animation-name: none;
-		}
+	.ft {
+		<xsl:for-each select="$base/main/node">--v<xsl:value-of select="position()"/>: <xsl:value-of select="s"/>;
+		</xsl:for-each><xsl:for-each select="$base/main/node">--g<xsl:value-of select="position()"/>: 0;
+		</xsl:for-each>
+		--f: 15;
+	}
 		<xsl:for-each select="$base/main/node">
 			.node-<xsl:value-of select="position()" /> {
 				top: calc((<xsl:value-of select="y" /> * 1px - 36px ) * var(--w) / 600 - 1rem);
@@ -165,9 +137,7 @@
 				z-index: 500;
 				background: #ACF;
 			}
-		</xsl:for-each>
-		<xsl:for-each select="$base/main/node">
-			<xsl:variable name="pid" select="position()"/>
+		</xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="pid" select="position()"/>
 			.fox-j.c-<xsl:value-of select="$pid" /> {
 				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$pid"> + var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
 			}
@@ -176,8 +146,7 @@
 				--nm: calc(1<xsl:for-each select="$base/main/node"><xsl:if test="position()=$pid"><xsl:for-each select="neighbor"><xsl:if test=".!=$pid"> + (1 - var(--g<xsl:value-of select="."/>))</xsl:if></xsl:for-each></xsl:if></xsl:for-each>);
 				--dg: calc(0<xsl:for-each select="d"> + var(--g<xsl:value-of select="position()"/>) * <xsl:value-of select="."/></xsl:for-each>);
 			}
-			<xsl:for-each select="neighbor">
-				<xsl:variable name="nid" select="."/>
+			<xsl:for-each select="neighbor"><xsl:variable name="nid" select="."/>
 				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" />, #fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
 					z-index: 40;
 					background: #DDF;
@@ -197,14 +166,10 @@
 					display: none;
 				}
 				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" /> {
-					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$nid"><xsl:if test="(b!=$pid) and (c!=$pid)">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if><xsl:if test="c=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * 1);</xsl:if>
-					</xsl:if></xsl:for-each></xsl:for-each>
+					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$nid"><xsl:if test="(b!=$pid) and (c!=$pid)">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if><xsl:if test="c=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * 1);</xsl:if></xsl:if></xsl:for-each></xsl:for-each>
 					z-index: calc(100000 + var(--nj) * 10000 + var(--nm) * 1000 - var(--dg));
 				}
-			</xsl:for-each>
-			<xsl:for-each select="jump">
-				<xsl:variable name="c" select="c"/>
-				<xsl:variable name="b" select="b"/>
+			</xsl:for-each><xsl:for-each select="jump"><xsl:variable name="c" select="c"/><xsl:variable name="b" select="b"/>
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" />, #fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" />, #fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .goose-dead.node-<xsl:value-of select="b" /> {
 					z-index: 40;
 					background: #DDF;
@@ -225,8 +190,7 @@
 				}
 
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" /> {
-					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$c"><xsl:if test="b!=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if>
-					</xsl:if></xsl:for-each></xsl:for-each>
+					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$c"><xsl:if test="b!=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if></xsl:if></xsl:for-each></xsl:for-each>
 					z-index: calc(1000000 + var(--nj) * 10);
 				}
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" /> {
@@ -236,19 +200,11 @@
 					z-index: 45;
 				}
 				
-			</xsl:for-each>
-		</xsl:for-each>
-		
-		
-		<xsl:for-each select="$base/main/node">
+			</xsl:for-each></xsl:for-each><xsl:for-each select="$base/main/node">
 			.gooseInput-<xsl:value-of select="position()" />:checked ~ div.ft {
 				--g<xsl:value-of select="position()" />: 1;
 			}
-			<xsl:variable name="gid" select="position()"/>
-			<xsl:variable name="gci" select="g"/>
-			<xsl:if test="contains($geese,$gci)">
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="pid" select="position()"/>
+			<xsl:variable name="gid" select="position()"/><xsl:variable name="gci" select="g"/><xsl:if test="contains($geese,$gci)"><xsl:for-each select="$base/main/node"><xsl:variable name="pid" select="position()"/>
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goosea-<xsl:value-of select="$gid" />.node-<xsl:value-of select="position()" /> {
 					z-index: 50;
 				}
@@ -269,153 +225,18 @@
 					z-index: 30;
 					text-shadow: 1px 1px 1px red, -1px -1px 1px red, -1px 1px 1px red, 1px -1px 1px red;
 				}
-			</xsl:for-each>
-			</xsl:if>
-		</xsl:for-each>
-		
-	</style>
-	</head>
-		<body>
-
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="pid" select="position()"/>
-				<input type="radio" name="fox" class="fi">
-				<xsl:attribute name="id">fox-<xsl:value-of select="position()" /></xsl:attribute>
-				<xsl:if test="$pid=15"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
-				</input>
-				<xsl:for-each select="neighbor">
-					<input type="radio" name="fox">
-					<xsl:attribute name="id">fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." /></xsl:attribute>
-					<xsl:attribute name="class">fox-m<xsl:value-of select="$pid" /></xsl:attribute>
-					</input>
-				</xsl:for-each>
-				<xsl:for-each select="jump">
-					<input type="radio" name="fox">
-					<xsl:attribute name="id">fox-j<xsl:value-of select="a" />-<xsl:value-of select="c" /></xsl:attribute>
-					<xsl:attribute name="class">fox-a<xsl:value-of select="a" /> fox-b<xsl:value-of select="b" /> fox-c<xsl:value-of select="c"/></xsl:attribute>
-					</input>
-				</xsl:for-each>
-			</xsl:for-each>
-			
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="gid" select="position()"/>
-				<xsl:variable name="gci" select="g"/>
-				<xsl:if test="contains($geese,$gci)">
-				<xsl:for-each select="$base/main/node">
-					<input type="radio">
-					<xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute>
-					<xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
-					<xsl:attribute name="class">gi gooseInput-<xsl:value-of select="position()" /></xsl:attribute>
-					<xsl:if test="position()=$gid"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
-					</input>
-					<input type="radio">
-					<xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute>
-					<xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-a<xsl:value-of select="position()" /></xsl:attribute>
-					</input>
-				</xsl:for-each>
-				<input type="radio">
-					<xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute>
-					<xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute>
-				</input>
-				</xsl:if>
-			</xsl:for-each>
-
-			<div class="game gt">
-			<div id="clock">
-				<div>
-					<xsl:for-each select="$base/main/sixty">
-					<div><xsl:value-of select="." /></div>
-					</xsl:for-each>
-				</div>
-			</div>
-			<xsl:for-each select="$base/main/node">
-				<label>
-				<xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute>
-				</label>
-			</xsl:for-each>
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="pid" select="position()"/>
-				<label>
-				<xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute>
-				<xsl:attribute name="class">node fox node-<xsl:value-of select="$pid" /></xsl:attribute>
+			</xsl:for-each></xsl:if></xsl:for-each></style></head><body><xsl:for-each select="$base/main/node"><xsl:variable name="pid" select="position()"/><input type="radio" name="fox" class="fi"><xsl:attribute name="id">fox-<xsl:value-of select="position()" /></xsl:attribute><xsl:if test="$pid=15"><xsl:attribute name="checked"></xsl:attribute></xsl:if></input><xsl:for-each select="neighbor"><input type="radio" name="fox"><xsl:attribute name="id">fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." /></xsl:attribute><xsl:attribute name="class">fox-m<xsl:value-of select="$pid" /></xsl:attribute></input></xsl:for-each><xsl:for-each select="jump"><input type="radio" name="fox"><xsl:attribute name="id">fox-j<xsl:value-of select="a" />-<xsl:value-of select="c" /></xsl:attribute><xsl:attribute name="class">fox-a<xsl:value-of select="a" /> fox-b<xsl:value-of select="b" /> fox-c<xsl:value-of select="c"/></xsl:attribute></input></xsl:for-each></xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="gid" select="position()"/><xsl:variable name="gci" select="g"/><xsl:if test="contains($geese,$gci)"><xsl:for-each select="$base/main/node"><input type="radio"><xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute><xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute><xsl:attribute name="class">gi gooseInput-<xsl:value-of select="position()" /></xsl:attribute><xsl:if test="position()=$gid"><xsl:attribute name="checked"></xsl:attribute></xsl:if></input><input type="radio"><xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute><xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-a<xsl:value-of select="position()" /></xsl:attribute></input></xsl:for-each><input type="radio"><xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute><xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute></input></xsl:if></xsl:for-each><div class="game gt"><div id="clock"><div><xsl:for-each select="$base/main/sixty"><div><xsl:value-of select="." /></div></xsl:for-each></div></div><xsl:for-each select="$base/main/node"><label><xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute></label></xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="pid" select="position()"/><label><xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute><xsl:attribute name="class">node fox node-<xsl:value-of select="$pid" /></xsl:attribute>
 				🦊
-				</label>
-			</xsl:for-each>
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="gid" select="position()"/>
-				<xsl:variable name="gci" select="g"/>
-				<xsl:if test="contains($geese,$gci)">
-				<xsl:for-each select="$base/main/node">
-					<label>
-					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
-					<xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
-					<span>🪿</span>
-					</label>
-					<label>
-					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-a<xsl:value-of select="position()" /></xsl:attribute>
-					<xsl:attribute name="class">node goosea goosea-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
+				</label></xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="gid" select="position()"/><xsl:variable name="gci" select="g"/><xsl:if test="contains($geese,$gci)"><xsl:for-each select="$base/main/node"><label><xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute><xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute><span>🪿</span></label><label><xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-a<xsl:value-of select="position()" /></xsl:attribute><xsl:attribute name="class">node goosea goosea-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
 					🪿
-					</label>
-				</xsl:for-each>
-				</xsl:if>
-
-			</xsl:for-each>
-			</div>
-			<div class="game ft">
-			<xsl:for-each select="$base/main/node">
-				<label>
-				<xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute>
-				</label>
-			</xsl:for-each>
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="pid" select="position()"/>
-				<label>
-				<xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute>
-				<xsl:attribute name="class">node fox node-<xsl:value-of select="$pid" /></xsl:attribute>
+					</label></xsl:for-each></xsl:if></xsl:for-each></div><div class="game ft"><xsl:for-each select="$base/main/node"><label><xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute></label></xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="pid" select="position()"/><label><xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute><xsl:attribute name="class">node fox node-<xsl:value-of select="$pid" /></xsl:attribute>
 				🦊
-				</label>
-				<xsl:for-each select="neighbor">
-					<label>
-					<xsl:attribute name="for">fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." /></xsl:attribute>
-					<xsl:attribute name="class">node fox-m node-<xsl:value-of select="$pid" /> to-<xsl:value-of select="." /></xsl:attribute>
+				</label><xsl:for-each select="neighbor"><label><xsl:attribute name="for">fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." /></xsl:attribute><xsl:attribute name="class">node fox-m node-<xsl:value-of select="$pid" /> to-<xsl:value-of select="." /></xsl:attribute>
 					🦊 Move
-					</label>
-				</xsl:for-each>
-				<xsl:for-each select="jump">
-					<label>
-					<xsl:attribute name="for">fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" /></xsl:attribute>
-					<xsl:attribute name="class">node fox-j node-<xsl:value-of select="$pid" /> b-<xsl:value-of select="b" /> c-<xsl:value-of select="c" /></xsl:attribute>
+					</label></xsl:for-each><xsl:for-each select="jump"><label><xsl:attribute name="for">fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" /></xsl:attribute><xsl:attribute name="class">node fox-j node-<xsl:value-of select="$pid" /> b-<xsl:value-of select="b" /> c-<xsl:value-of select="c" /></xsl:attribute>
 					🦊 Jump
-					</label>
-				</xsl:for-each>
-			</xsl:for-each>
-			
-			<xsl:for-each select="$base/main/node">
-				<xsl:variable name="gid" select="position()"/>
-				<xsl:variable name="gci" select="g"/>
-				<xsl:if test="contains($geese,$gci)">
-				<xsl:for-each select="$base/main/node">
-					<label>
-					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
-					<xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
-					<span>🪿</span>
-					</label>
-					<label>
-					
-					<xsl:attribute name="class">node goosea goosea-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
+					</label></xsl:for-each></xsl:for-each><xsl:for-each select="$base/main/node"><xsl:variable name="gid" select="position()"/><xsl:variable name="gci" select="g"/><xsl:if test="contains($geese,$gci)"><xsl:for-each select="$base/main/node"><label><xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute><xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute><span>🪿</span></label><label><xsl:attribute name="class">node goosea goosea-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
 					🪿
-					</label>
-					<label>
-					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute>
-					<xsl:attribute name="class">node goose-dead goose-<xsl:value-of select="$gid"/>-dead node-<xsl:value-of select="position()" /></xsl:attribute>
+					</label><label><xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute><xsl:attribute name="class">node goose-dead goose-<xsl:value-of select="$gid"/>-dead node-<xsl:value-of select="position()" /></xsl:attribute>
 					Kill 🪿
-					</label>
-				</xsl:for-each>
-				</xsl:if>
-
-			</xsl:for-each>
-			</div>
-		</body>
-	</html>
-</xsl:template>
-</xsl:stylesheet>
+					</label></xsl:for-each></xsl:if></xsl:for-each></div></body></html></xsl:template></xsl:stylesheet>
