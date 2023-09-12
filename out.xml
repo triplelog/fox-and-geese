@@ -5,7 +5,7 @@
 <node>
 	<x>531</x>
 	<y>570</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>26</neighbor>
@@ -101,7 +101,7 @@
 <node>
 	<x>493</x>
 	<y>341</y>
-	<z>1</z>
+	<z>0</z>
 	
 	
 	<neighbor>4</neighbor>
@@ -127,7 +127,7 @@
 <node>
 	<x>432</x>
 	<y>364</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>4</neighbor>
@@ -177,7 +177,7 @@
 <node>
 	<x>552</x>
 	<y>201</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>9</neighbor>
@@ -215,7 +215,7 @@
 <node>
 	<x>411</x>
 	<y>165</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>12</neighbor>
@@ -237,7 +237,7 @@
 <node>
 	<x>431</x>
 	<y>199</y>
-	<z>1</z>
+	<z>0</z>
 	
 	
 	<neighbor>13</neighbor>
@@ -261,7 +261,7 @@
 <node>
 	<x>322</x>
 	<y>156</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>17</neighbor>
@@ -309,7 +309,7 @@
 <node>
 	<x>585</x>
 	<y>268</y>
-	<z>1</z>
+	<z>0</z>
 	
 	
 	<neighbor>5</neighbor>
@@ -369,7 +369,7 @@
 <node>
 	<x>287</x>
 	<y>222</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>19</neighbor>
@@ -399,7 +399,7 @@
 <node>
 	<x>345</x>
 	<y>297</y>
-	<z>1</z>
+	<z>0</z>
 	
 	
 	<neighbor>25</neighbor>
@@ -431,7 +431,7 @@
 <node>
 	<x>240</x>
 	<y>266</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>20</neighbor>
@@ -449,7 +449,7 @@
 <node>
 	<x>196</x>
 	<y>322</y>
-	<z>1</z>
+	<z>0</z>
 	
 	
 	<neighbor>30</neighbor>
@@ -549,7 +549,7 @@
 <node>
 	<x>249</x>
 	<y>200</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>17</neighbor>
@@ -565,7 +565,7 @@
 <node>
 	<x>328</x>
 	<y>205</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>12</neighbor>
@@ -591,7 +591,7 @@
 <node>
 	<x>23</x>
 	<y>559</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>1</neighbor>
@@ -649,7 +649,7 @@
 <node>
 	<x>109</x>
 	<y>476</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>28</neighbor>
@@ -675,7 +675,7 @@
 <node>
 	<x>112</x>
 	<y>406</y>
-	<z>0</z>
+	<z>1</z>
 	
 	
 	<neighbor>29</neighbor>
@@ -744,6 +744,8 @@
 
 
 
+<goose>1</goose>
+
 
 
 <goose>2</goose>
@@ -756,29 +758,31 @@
 
 
 
-<goose>5</goose>
+
+
+<goose>6</goose>
 
 
 
 
 
+<goose>8</goose>
 
 
 
 
 
-
-
-
-<goose>11</goose>
-
+<goose>10</goose>
 
 
 
 
 
+<goose>12</goose>
 
-<goose>14</goose>
+
+
+
 
 
 
@@ -788,15 +792,15 @@
 
 
 
-
-
-<goose>18</goose>
+<goose>17</goose>
 
 
 
 
 
-<goose>20</goose>
+<goose>19</goose>
+
+
 
 
 
@@ -808,9 +812,15 @@
 
 
 
+<goose>24</goose>
 
 
 
+<goose>25</goose>
+
+
+
+<goose>26</goose>
 
 
 
@@ -822,7 +832,11 @@
 
 
 
+<goose>29</goose>
 
+
+
+<goose>30</goose>
 
 
 
@@ -830,5 +844,122 @@
 
 <goose>32</goose>
 
+
+
+<sixty>59</sixty>
+
+<sixty>58</sixty>
+
+<sixty>57</sixty>
+
+<sixty>56</sixty>
+
+<sixty>55</sixty>
+
+<sixty>54</sixty>
+
+<sixty>53</sixty>
+
+<sixty>52</sixty>
+
+<sixty>51</sixty>
+
+<sixty>50</sixty>
+
+<sixty>49</sixty>
+
+<sixty>48</sixty>
+
+<sixty>47</sixty>
+
+<sixty>46</sixty>
+
+<sixty>45</sixty>
+
+<sixty>44</sixty>
+
+<sixty>43</sixty>
+
+<sixty>42</sixty>
+
+<sixty>41</sixty>
+
+<sixty>40</sixty>
+
+<sixty>39</sixty>
+
+<sixty>38</sixty>
+
+<sixty>37</sixty>
+
+<sixty>36</sixty>
+
+<sixty>35</sixty>
+
+<sixty>34</sixty>
+
+<sixty>33</sixty>
+
+<sixty>32</sixty>
+
+<sixty>31</sixty>
+
+<sixty>30</sixty>
+
+<sixty>29</sixty>
+
+<sixty>28</sixty>
+
+<sixty>27</sixty>
+
+<sixty>26</sixty>
+
+<sixty>25</sixty>
+
+<sixty>24</sixty>
+
+<sixty>23</sixty>
+
+<sixty>22</sixty>
+
+<sixty>21</sixty>
+
+<sixty>20</sixty>
+
+<sixty>19</sixty>
+
+<sixty>18</sixty>
+
+<sixty>17</sixty>
+
+<sixty>16</sixty>
+
+<sixty>15</sixty>
+
+<sixty>14</sixty>
+
+<sixty>13</sixty>
+
+<sixty>12</sixty>
+
+<sixty>11</sixty>
+
+<sixty>10</sixty>
+
+<sixty>9</sixty>
+
+<sixty>8</sixty>
+
+<sixty>7</sixty>
+
+<sixty>6</sixty>
+
+<sixty>5</sixty>
+
+<sixty>4</sixty>
+
+<sixty>3</sixty>
+
+<sixty>2</sixty>
 
 </main>

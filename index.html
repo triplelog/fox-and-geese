@@ -134,24 +134,10 @@
 	<svg id="bg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="svg20997" width="1250" height="1250" version="1.1" viewBox="0 75 1250 1250">
 		<defs id="defs20937">
 		  <filter id="filter12254" width="1" height="1" x="0" y="0" color-interpolation-filters="sRGB">
-			<feTurbulence id="feTurbulence20922" baseFrequency=".3" numOctaves="4" result="result4" type="fractalNoise"/>
-			<feDisplacementMap id="feDisplacementMap20924" in="SourceGraphic" in2="result4" result="result3" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-			<feDiffuseLighting id="feDiffuseLighting20928" in="result4" lighting-color="#E9E6D7" result="result1" surfaceScale="2">
-			  <feDistantLight id="feDistantLight20926" azimuth="235" elevation="40"/>
+			<feTurbulence type="fractalNoise" baseFrequency='0.03' numOctaves="3" result='noise' />
+			<feDiffuseLighting in='noise' lighting-color='blue' surfaceScale='2'>
+				<feDistantLight azimuth='45' elevation='60' />
 			</feDiffuseLighting>
-			<feComposite id="feComposite20930" in="result3" in2="result1" operator="in" result="result2"/>
-			<feComposite id="feComposite20932" in2="result1" k1="1.7" operator="arithmetic" result="result5"/>
-			<feBlend id="feBlend20934" in="result5" in2="result3"/>
-		  </filter>
-		  <filter id="filter1225" width="1" height="1" x="0" y="0" color-interpolation-filters="sRGB">
-			<feTurbulence id="feTurbulence20922" baseFrequency=".0067" numOctaves="4" result="result4" type="fractalNoise"/>
-			<feDisplacementMap id="feDisplacementMap20924" in="SourceGraphic" in2="result4" result="result3" scale="10" xChannelSelector="R" yChannelSelector="G"/>
-			<feDiffuseLighting id="feDiffuseLighting20928" in="result4" lighting-color="#E9E6D7" result="result1" surfaceScale="2">
-			  <feDistantLight id="feDistantLight20926" azimuth="235" elevation="40"/>
-			</feDiffuseLighting>
-			<feComposite id="feComposite20930" in="result3" in2="result1" operator="in" result="result2"/>
-			<feComposite id="feComposite20932" in2="result1" k1="1.7" operator="arithmetic" result="result5"/>
-			<feBlend id="feBlend20934" in="result5" in2="result3"/>
 		  </filter>
 		  <filter id="filter404" width="1" height="1" x="0" y="0" style="color-interpolation-filters:sRGB">
 			<feGaussianBlur id="feGaussianBlur394" result="result6" stdDeviation="5"/>
@@ -164,8 +150,8 @@
 		<style id="style20939" type="text/css">
 		  .st1{fill:#dc3d96}.st13{fill:#ee3981}.st21{fill:#f1da10}.st25{fill:#4f421a}.st32{fill:#f9ef5e}
 		</style>
-		<path id="rect20945" fill="#2328c2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.8" d="M-149-140h1640v1573H-149z" style="filter:url(#filter12254)"/>
-		<g  style="filter:url(#filter1225)">
+		<path id="rect20945" fill="#2328c2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.8" d="M-149-140h1640v1573H-149z" style="filter:url(#filter12254)" />
+		<g >
 		<g id="g353" style="filter:url(#filter404)">
 		  <path id="path20947" fill="#0a530b" d="M1086 955c15 40-57-3-78-21-100-82 103-39 78 21z" class="st25"  style="fill:#00974a;fill-opacity:1"/>
 		  <path id="path20949" d="M1048 691c-13 23-9-4-29 31 40 42-41 15 3-26 8-8 23-14 26-5z" class="st13"  />
