@@ -5,9 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<style>
+		body {
+			--w: 400;
+		}
+		@media screen and (min-width: 500px) and (min-height: 500px){
+			body  {--w: 500;}
+		}
+		@media screen and (min-width: 600px) and (min-height: 600px){
+			body  {--w: 600;}
+		}
+		@media screen and (min-width: 750px) and (min-height: 750px){
+			body  {--w: 750;}
+		}
+		@media screen and (min-width: 900px) and (min-height: 900px){
+			body  {--w: 900;}
+		}
+		@media screen and (min-width: 1200px) and (min-height: 1200px){
+			body  {--w: 1200;}
+		}
+		@media screen and (min-width: 1500px) and (min-height: 1500px){
+			body  {--w: 1500;}
+		}
+		@media screen and (min-width: 1800px) and (min-height: 1800px){
+			body  {--w: 1800;}
+		}
 		iframe {
-			width: 600px;
-			height: 600px;
+			width: calc(var(--w) * 1px);
+			height: calc(var(--w) * 1px);
 			z-index: 10000;
 			border: 0px;
 			position: absolute;
@@ -18,29 +42,34 @@
 			position: absolute;
 			top:0px;
 			left: 0px;
+			width: 100%;
+			background:
+			radial-gradient(black 15%, transparent 16%) 0 0,
+			radial-gradient(black 15%, transparent 16%) 8px 8px,
+			radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+			radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+			background-color:#282828;
+			background-size:16px 16px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			height: 100vh;
+		}
+		#container > div {
+			position: relative;
+			width: calc(var(--w) * 1px);
+			height: calc(var(--w) * 1px);
 		}
 		#bg {
 			display: block;
 			opacity: 0.75;
 			position: absolute;
-			height: 600px;
-			width: 600px;
+			height: 100%;
+			width: 100%;
 			top:0px;
 			left: 0px;
-		}
-		#game {
-			display: block;
-			position: absolute;
-			height: 600px;
-			width: 1200px;
-			top:0px;
-			left: 0px;
-		}
-		#menu {
-			display: block;
-			position: absolute;
-			top:620px;
-			left: 0px;
+			background: rgba(0,0,255,0.25);
 		}
 		#circles {
 			pointer-events: none;
@@ -131,6 +160,7 @@
 </head>
 <body>
 	<div id="container">
+	<div>
 	<svg id="bg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="svg20997" width="1250" height="1250" version="1.1" viewBox="0 75 1250 1250">
 		<defs id="defs20937">
 		  <filter id="filter12254" width="1" height="1" x="0" y="0" color-interpolation-filters="sRGB">
@@ -151,6 +181,7 @@
 		  .st1{fill:#dc3d96}.st13{fill:#ee3981}.st21{fill:#f1da10}.st25{fill:#4f421a}.st32{fill:#f9ef5e}
 		</style>
 		<path id="rect20945" fill="#2328c2" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.8" d="M-149-140h1640v1573H-149z" style="filter:url(#filter12254)" />
+
 		<g >
 		<g id="g353" style="filter:url(#filter404)">
 		  <path id="path20947" fill="#0a530b" d="M1086 955c15 40-57-3-78-21-100-82 103-39 78 21z" class="st25"  style="fill:#00974a;fill-opacity:1"/>
@@ -191,6 +222,7 @@
 		
 	</svg>
 	<iframe src="out.xml"  ></iframe>
+	</div>
 	</div>
 </body>
 </html>

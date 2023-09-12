@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:template match="/main">
+<xsl:variable name="base" select="document('base.xml')"/>
+<xsl:template match="/">
+	<xsl:variable name="geese" select="g"/>
 	<html>
 	<head>
 	<style>
@@ -13,15 +15,40 @@
 	}
 	@keyframes sixty {
 		from {top: 0rem;}
-		to {top: -116rem;}
+		to {top: calc(-58 * var(--ww));}
+	}
+	html {
+		overflow: hidden;
 	}
 	body {
-		--w: 600px;
+		--w: 400;
+		--ww: 1.5rem;
+	}
+	@media screen and (min-width: 500px) and (min-height: 500px){
+		body  {--w: 500; --ww: 1.5rem;}
+	}
+	@media screen and (min-width: 600px) and (min-height: 600px){
+		body  {--w: 600; --ww: 2rem;}
+	}
+	@media screen and (min-width: 750px) and (min-height: 750px){
+		body  {--w: 750; --ww: 2.5rem;}
+	}
+	@media screen and (min-width: 900px) and (min-height: 900px){
+		body  {--w: 900; --ww: 3rem;}
+	}
+	@media screen and (min-width: 1200px) and (min-height: 1200px){
+		body  {--w: 1200; --ww: 4rem;}
+	}
+	@media screen and (min-width: 1500px) and (min-height: 1500px){
+		body  {--w: 1500; --ww: 5rem;}
+	}
+	@media screen and (min-width: 1800px) and (min-height: 1800px){
+		body  {--w: 1800; --ww: 6rem;}
 	}
 	.game {
 		position: absolute;
-		width: var(--w);
-		height: var(--w);
+		width: calc(var(--w) * 1px);
+		height: calc(var(--w) * 1px);
 		top: 0px;
 		left: 0px;
 		
@@ -40,14 +67,10 @@
 		animation-timing-function: linear;
 		z-index: 60;
 	}
-	.node {
-		/*--tsc: black;*/
-	}
 	label {
-		font-size: 0.9rem;
+		font-size: calc(var(--ww) * 0.45);
 		text-align: center;
 		padding-top: 2px;
-		/*text-shadow: 1px 1px 1px var(--tsc), -1px -1px 1px var(--tsc), -1px 1px 1px var(--tsc), 1px -1px 1px var(--tsc);*/
 		text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;
 
 	}
@@ -57,8 +80,9 @@
 		top: 10px;
 		display: block;
 		overflow: hidden;
-		width: 5rem;
-		height: calc(2rem + 2px);
+		width: calc(var(--ww) * 2.5);
+		height: calc(var(--ww) + 2px);
+		font-size: calc(var(--ww) * 0.5);
 		background: white;
 		border: 1px solid black;
 	}
@@ -71,15 +95,15 @@
 		animation-timing-function: steps(59,jump-none);
 	}
 	#clock > div > div {
-		width: 5rem;
+		width: calc(var(--ww) * 2.5);
 		display: inline-block;
-		height: 2rem;
+		height: var(--ww);
 		text-align: center;
-		line-height: 2rem;
+		line-height: var(--ww);
 	}
 		.node {
-			width: 20px;
-			height: 20px;
+			width: calc(var(--ww) * 0.625);
+			height: calc(var(--ww) * 0.625);
 			border: 1px solid black;
 			cursor: pointer;
 			position: absolute;
@@ -118,10 +142,10 @@
 		.fi:active ~ .gt #clock > div {
 			animation-name: none;
 		}
-		<xsl:for-each select="node">
+		<xsl:for-each select="$base/main/node">
 			.node-<xsl:value-of select="position()" /> {
-				top: calc(<xsl:value-of select="y" /> * 1px - 35px - 1rem);
-				left: calc(<xsl:value-of select="x" /> * 1px - 1rem + 4px);
+				top: calc((<xsl:value-of select="y" /> * 1px - 36px ) * var(--w) / 600 - 1rem);
+				left: calc((<xsl:value-of select="x" /> * 1px + 4px) * var(--w) / 600 - 1rem);
 			}
 			#fox-<xsl:value-of select="position()" />:checked ~ div .fox.node-<xsl:value-of select="position()" /> {
 				z-index: 500;
@@ -135,7 +159,7 @@
 				background: #ACF;
 			}
 		</xsl:for-each>
-		<xsl:for-each select="node">
+		<xsl:for-each select="$base/main/node">
 			<xsl:variable name="pid" select="position()"/>
 			<xsl:for-each select="neighbor">
 				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" />, #fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
@@ -144,11 +168,11 @@
 					left: 10px;
 					top: 10px;
 					cursor: pointer;
-					width: 5rem;
-					height: 2rem;
+					width: calc(var(--ww) * 2.5);
+					height: var(--ww);
 					opacity: 1;
 					text-shadow: unset;
-					line-height: 2rem;
+					line-height: var(--ww);
 				}
 				#fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." />::after {
 					content: " Done";
@@ -164,11 +188,11 @@
 					left: 10px;
 					top: 10px;
 					cursor: pointer;
-					width: 5rem;
-					height: 2rem;
+					width: calc(var(--ww) * 2.5);
+					height: var(--ww);
 					opacity: 1;
 					text-shadow: unset;
-					line-height: 2rem;
+					line-height: var(--ww);
 				}
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="c" />:checked ~ div .fox-j.c-<xsl:value-of select="c" /> {
 					display: none;
@@ -184,9 +208,11 @@
 		</xsl:for-each>
 		
 		
-		<xsl:for-each select="goose">
-			<xsl:variable name="gid" select="."/>
-			<xsl:for-each select="../node">
+		<xsl:for-each select="$base/main/node">
+			<xsl:variable name="gid" select="position()"/>
+			<xsl:variable name="gci" select="g"/>
+			<xsl:if test="contains($geese,$gci)">
+			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goosea-<xsl:value-of select="$gid" />.node-<xsl:value-of select="position()" /> {
 					z-index: 50;
@@ -209,17 +235,18 @@
 					text-shadow: 1px 1px 1px red, -1px -1px 1px red, -1px 1px 1px red, 1px -1px 1px red;
 				}
 			</xsl:for-each>
+			</xsl:if>
 		</xsl:for-each>
 		
 	</style>
 	</head>
 		<body>
 
-			<xsl:for-each select="node">
+			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
 				<input type="radio" name="fox" class="fi">
 				<xsl:attribute name="id">fox-<xsl:value-of select="position()" /></xsl:attribute>
-				<xsl:if test="z>1"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
+				<xsl:if test="$pid=15"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
 				</input>
 				<xsl:for-each select="neighbor">
 					<input type="radio" name="fox">
@@ -235,9 +262,11 @@
 				</xsl:for-each>
 			</xsl:for-each>
 			
-			<xsl:for-each select="goose">
-				<xsl:variable name="gid" select="."/>
-				<xsl:for-each select="../node">
+			<xsl:for-each select="$base/main/node">
+				<xsl:variable name="gid" select="position()"/>
+				<xsl:variable name="gci" select="g"/>
+				<xsl:if test="contains($geese,$gci)">
+				<xsl:for-each select="$base/main/node">
 					<input type="radio">
 					<xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute>
 					<xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
@@ -253,22 +282,23 @@
 					<xsl:attribute name="name">goose-<xsl:value-of select="$gid"/></xsl:attribute>
 					<xsl:attribute name="id">goose-<xsl:value-of select="$gid"/>-dead</xsl:attribute>
 				</input>
+				</xsl:if>
 			</xsl:for-each>
 
 			<div class="game gt">
 			<div id="clock">
 				<div>
-					<xsl:for-each select="sixty">
+					<xsl:for-each select="$base/main/sixty">
 					<div><xsl:value-of select="." /></div>
 					</xsl:for-each>
 				</div>
 			</div>
-			<xsl:for-each select="node">
+			<xsl:for-each select="$base/main/node">
 				<label>
 				<xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute>
 				</label>
 			</xsl:for-each>
-			<xsl:for-each select="node">
+			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
 				<label>
 				<xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute>
@@ -276,9 +306,11 @@
 				🦊
 				</label>
 			</xsl:for-each>
-			<xsl:for-each select="goose">
-				<xsl:variable name="gid" select="."/>
-				<xsl:for-each select="../node">
+			<xsl:for-each select="$base/main/node">
+				<xsl:variable name="gid" select="position()"/>
+				<xsl:variable name="gci" select="g"/>
+				<xsl:if test="contains($geese,$gci)">
+				<xsl:for-each select="$base/main/node">
 					<label>
 					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
 					<xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
@@ -290,16 +322,17 @@
 					🪿
 					</label>
 				</xsl:for-each>
+				</xsl:if>
 
 			</xsl:for-each>
 			</div>
 			<div class="game ft">
-			<xsl:for-each select="node">
+			<xsl:for-each select="$base/main/node">
 				<label>
 				<xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute>
 				</label>
 			</xsl:for-each>
-			<xsl:for-each select="node">
+			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
 				<label>
 				<xsl:attribute name="for">fox-<xsl:value-of select="$pid" /></xsl:attribute>
@@ -321,9 +354,12 @@
 					</label>
 				</xsl:for-each>
 			</xsl:for-each>
-			<xsl:for-each select="goose">
-				<xsl:variable name="gid" select="."/>
-				<xsl:for-each select="../node">
+			
+			<xsl:for-each select="$base/main/node">
+				<xsl:variable name="gid" select="position()"/>
+				<xsl:variable name="gci" select="g"/>
+				<xsl:if test="contains($geese,$gci)">
+				<xsl:for-each select="$base/main/node">
 					<label>
 					<xsl:attribute name="for">goose-<xsl:value-of select="$gid"/>-<xsl:value-of select="position()" /></xsl:attribute>
 					<xsl:attribute name="class">node goose goose-<xsl:value-of select="$gid"/> node-<xsl:value-of select="position()" /></xsl:attribute>
@@ -340,6 +376,7 @@
 					Kill 🪿
 					</label>
 				</xsl:for-each>
+				</xsl:if>
 
 			</xsl:for-each>
 			</div>

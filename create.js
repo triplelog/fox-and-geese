@@ -8,27 +8,37 @@ let moves = [];
 let jumps = [];
 let idx= 0;
 let fox = 14;
+let gci = [1,2,3,4,5,6,7,8,9];
+for (var i=65;i<88;i++){
+	gci.push(String.fromCharCode(i));
+}
+let geese = "";
 for (var i=0;i<32;i++){
+	nodes.push([nodesOld[i][0],nodesOld[i][1],gci[i]]);
 	if (i == fox){
-		nodes.push([nodesOld[i][0],nodesOld[i][1],2]);
+		
 	}
 	else {
 		if (Math.random() < 0.5){
-			nodes.push([nodesOld[i][0],nodesOld[i][1],1]);
+			geese += gci[i];
 		}
 		else {
-			nodes.push([nodesOld[i][0],nodesOld[i][1],0]);
+			
 		}
 	}
 	moves.push([]);
 	jumps.push([]);
 }
+let dups = new Set();
 for (var i=0;i<lines.length;i++){
 	for (var j=1;j<lines[i].length;j++){
 		let a = lines[i][j-1];
 		let b = lines[i][j];
-		moves[a].push(b);
-		moves[b].push(a);
+		if (!dups.has(a+"-"+b)){
+			moves[a].push(b);
+			moves[b].push(a);
+			dups.add(a+"-"+b);
+		}
 		if (j<lines[i].length-1){
 			let c = lines[i][j+1];
 			jumps[a].push([a,b,c]);
@@ -44,4 +54,7 @@ for (var i=0;i<lines.length;i++){
 
 
 let html = nunjucks.render("xmltemplate.xml",{nodes:nodes,moves:moves,jumps:jumps});
-fs.writeFileSync('out.xml',html);
+fs.writeFileSync('base.xml',html);
+
+let html2 = nunjucks.render("xmllevel.xml",{g:geese});
+fs.writeFileSync('l4.xml',html2);

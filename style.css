@@ -1,0 +1,66 @@
+body {
+	--w: 400;
+}
+@media screen and (min-width: 500px) and (min-height: 500px){
+	body  {--w: 500;}
+}
+@media screen and (min-width: 600px) and (min-height: 600px){
+	body  {--w: 600;}
+}
+@media screen and (min-width: 750px) and (min-height: 750px){
+	body  {--w: 750;}
+}
+@media screen and (min-width: 900px) and (min-height: 900px){
+	body  {--w: 900;}
+}
+@media screen and (min-width: 1200px) and (min-height: 1200px){
+	body  {--w: 1200;}
+}
+@media screen and (min-width: 1500px) and (min-height: 1500px){
+	body  {--w: 1500;}
+}
+@media screen and (min-width: 1800px) and (min-height: 1800px){
+	body  {--w: 1800;}
+}
+iframe {
+	width: calc(var(--w) * 1px);
+	height: calc(var(--w) * 1px);
+	z-index: 10000;
+	border: 0px;
+	position: absolute;
+	display: block;
+}
+#container {
+	display: block;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	width: 100%;
+	background:
+	radial-gradient(black 15%, transparent 16%) 0 0,
+	radial-gradient(black 15%, transparent 16%) 8px 8px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+	background-color:#282828;
+	background-size:16px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+#container > div {
+	position: relative;
+	width: calc(var(--w) * 1px);
+	height: calc(var(--w) * 1px);
+}
+#bg, #fg {
+	display: block;
+	opacity: 0.75;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top:0px;
+	left: 0px;
+	background: rgba(0,0,255,0.25);
+}
