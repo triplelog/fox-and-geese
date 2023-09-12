@@ -5,7 +5,6 @@
 	<x>531</x>
 	<y>570</y>
 	<g>1</g>
-	<s>17</s>
 	<neighbor>26</neighbor>
 	<neighbor>2</neighbor>
 	
@@ -52,7 +51,6 @@
 	<x>495</x>
 	<y>449</y>
 	<g>2</g>
-	<s>7</s>
 	<neighbor>1</neighbor>
 	<neighbor>23</neighbor>
 	<neighbor>3</neighbor>
@@ -101,7 +99,6 @@
 	<x>470</x>
 	<y>403</y>
 	<g>3</g>
-	<s>8</s>
 	<neighbor>2</neighbor>
 	<neighbor>4</neighbor>
 	<neighbor>6</neighbor>
@@ -149,7 +146,6 @@
 	<x>475</x>
 	<y>372</y>
 	<g>4</g>
-	<s>20</s>
 	<neighbor>3</neighbor>
 	<neighbor>5</neighbor>
 	<neighbor>6</neighbor>
@@ -197,7 +193,6 @@
 	<x>493</x>
 	<y>341</y>
 	<g>5</g>
-	<s>19</s>
 	<neighbor>4</neighbor>
 	<neighbor>14</neighbor>
 	<neighbor>7</neighbor>
@@ -247,7 +242,6 @@
 	<x>432</x>
 	<y>364</y>
 	<g>6</g>
-	<s>19</s>
 	<neighbor>4</neighbor>
 	<neighbor>7</neighbor>
 	<neighbor>3</neighbor>
@@ -296,7 +290,6 @@
 	<x>434</x>
 	<y>330</y>
 	<g>7</g>
-	<s>9</s>
 	<neighbor>18</neighbor>
 	<neighbor>5</neighbor>
 	<neighbor>6</neighbor>
@@ -346,7 +339,6 @@
 	<x>552</x>
 	<y>201</y>
 	<g>8</g>
-	<s>5</s>
 	<neighbor>9</neighbor>
 	<neighbor>14</neighbor>
 	
@@ -392,7 +384,6 @@
 	<x>503</x>
 	<y>171</y>
 	<g>9</g>
-	<s>9</s>
 	<neighbor>10</neighbor>
 	<neighbor>8</neighbor>
 	<neighbor>13</neighbor>
@@ -439,7 +430,6 @@
 	<x>411</x>
 	<y>165</y>
 	<g>A</g>
-	<s>20</s>
 	<neighbor>12</neighbor>
 	<neighbor>9</neighbor>
 	<neighbor>11</neighbor>
@@ -487,7 +477,6 @@
 	<x>431</x>
 	<y>199</y>
 	<g>B</g>
-	<s>22</s>
 	<neighbor>13</neighbor>
 	<neighbor>25</neighbor>
 	<neighbor>7</neighbor>
@@ -536,7 +525,6 @@
 	<x>322</x>
 	<y>156</y>
 	<g>C</g>
-	<s>14</s>
 	<neighbor>17</neighbor>
 	<neighbor>10</neighbor>
 	<neighbor>15</neighbor>
@@ -586,7 +574,6 @@
 	<x>499</x>
 	<y>222</y>
 	<g>D</g>
-	<s>6</s>
 	<neighbor>14</neighbor>
 	<neighbor>11</neighbor>
 	<neighbor>5</neighbor>
@@ -634,7 +621,6 @@
 	<x>585</x>
 	<y>268</y>
 	<g>E</g>
-	<s>8</s>
 	<neighbor>5</neighbor>
 	<neighbor>8</neighbor>
 	<neighbor>13</neighbor>
@@ -681,7 +667,6 @@
 	<x>249</x>
 	<y>137</y>
 	<g>F</g>
-	<s>9</s>
 	<neighbor>16</neighbor>
 	<neighbor>12</neighbor>
 	
@@ -727,7 +712,6 @@
 	<x>219</x>
 	<y>158</y>
 	<g>G</g>
-	<s>13</s>
 	<neighbor>20</neighbor>
 	<neighbor>15</neighbor>
 	<neighbor>24</neighbor>
@@ -775,7 +759,6 @@
 	<x>287</x>
 	<y>222</y>
 	<g>H</g>
-	<s>6</s>
 	<neighbor>19</neighbor>
 	<neighbor>12</neighbor>
 	<neighbor>25</neighbor>
@@ -827,7 +810,6 @@
 	<x>345</x>
 	<y>297</y>
 	<g>I</g>
-	<s>13</s>
 	<neighbor>25</neighbor>
 	<neighbor>23</neighbor>
 	<neighbor>22</neighbor>
@@ -880,7 +862,6 @@
 	<x>240</x>
 	<y>266</y>
 	<g>J</g>
-	<s>3</s>
 	<neighbor>20</neighbor>
 	<neighbor>17</neighbor>
 	
@@ -926,7 +907,6 @@
 	<x>196</x>
 	<y>322</y>
 	<g>K</g>
-	<s>6</s>
 	<neighbor>30</neighbor>
 	<neighbor>19</neighbor>
 	<neighbor>16</neighbor>
@@ -978,7 +958,6 @@
 	<x>240</x>
 	<y>380</y>
 	<g>L</g>
-	<s>7</s>
 	<neighbor>22</neighbor>
 	<neighbor>20</neighbor>
 	
@@ -1024,7 +1003,6 @@
 	<x>279</x>
 	<y>399</y>
 	<g>M</g>
-	<s>11</s>
 	<neighbor>23</neighbor>
 	<neighbor>21</neighbor>
 	<neighbor>32</neighbor>
@@ -1074,7 +1052,6 @@
 	<x>340</x>
 	<y>403</y>
 	<g>N</g>
-	<s>7</s>
 	<neighbor>18</neighbor>
 	<neighbor>22</neighbor>
 	<neighbor>2</neighbor>
@@ -1124,7 +1101,6 @@
 	<x>249</x>
 	<y>200</y>
 	<g>O</g>
-	<s>9</s>
 	<neighbor>17</neighbor>
 	<neighbor>16</neighbor>
 	
@@ -1169,7 +1145,6 @@
 	<x>328</x>
 	<y>205</y>
 	<g>P</g>
-	<s>19</s>
 	<neighbor>12</neighbor>
 	<neighbor>18</neighbor>
 	<neighbor>11</neighbor>
@@ -1219,7 +1194,6 @@
 	<x>23</x>
 	<y>559</y>
 	<g>Q</g>
-	<s>8</s>
 	<neighbor>1</neighbor>
 	<neighbor>32</neighbor>
 	<neighbor>28</neighbor>
@@ -1267,7 +1241,6 @@
 	<x>95</x>
 	<y>560</y>
 	<g>R</g>
-	<s>20</s>
 	<neighbor>28</neighbor>
 	
 	<jump><a>27</a><b>28</b><c>29</c></jump>
@@ -1311,7 +1284,6 @@
 	<x>73</x>
 	<y>527</y>
 	<g>S</g>
-	<s>11</s>
 	<neighbor>27</neighbor>
 	<neighbor>29</neighbor>
 	<neighbor>26</neighbor>
@@ -1358,7 +1330,6 @@
 	<x>109</x>
 	<y>476</y>
 	<g>T</g>
-	<s>17</s>
 	<neighbor>28</neighbor>
 	<neighbor>30</neighbor>
 	<neighbor>31</neighbor>
@@ -1407,7 +1378,6 @@
 	<x>112</x>
 	<y>406</y>
 	<g>U</g>
-	<s>13</s>
 	<neighbor>29</neighbor>
 	<neighbor>20</neighbor>
 	<neighbor>31</neighbor>
@@ -1455,7 +1425,6 @@
 	<x>180</x>
 	<y>432</y>
 	<g>V</g>
-	<s>9</s>
 	<neighbor>30</neighbor>
 	<neighbor>32</neighbor>
 	<neighbor>29</neighbor>
@@ -1503,7 +1472,6 @@
 	<x>253</x>
 	<y>448</y>
 	<g>W</g>
-	<s>13</s>
 	<neighbor>23</neighbor>
 	<neighbor>26</neighbor>
 	<neighbor>31</neighbor>
