@@ -67,6 +67,13 @@
 		animation-timing-function: linear;
 		z-index: 60;
 	}
+	.ft {
+		<xsl:for-each select="$base/main/node">--v<xsl:value-of select="position()"/>: <xsl:value-of select="s"/>;
+		</xsl:for-each>
+		<xsl:for-each select="$base/main/node">--g<xsl:value-of select="position()"/>: 0;
+		</xsl:for-each>
+		--f: 15;
+	}
 	label {
 		font-size: calc(var(--ww) * 0.45);
 		text-align: center;
@@ -161,7 +168,16 @@
 		</xsl:for-each>
 		<xsl:for-each select="$base/main/node">
 			<xsl:variable name="pid" select="position()"/>
+			.fox-j.c-<xsl:value-of select="$pid" /> {
+				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$pid"> + var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
+			}
+			.fox-m.to-<xsl:value-of select="$pid" /> {
+				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$pid"> + var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
+				--nm: calc(1<xsl:for-each select="$base/main/node"><xsl:if test="position()=$pid"><xsl:for-each select="neighbor"><xsl:if test=".!=$pid"> + (1 - var(--g<xsl:value-of select="."/>))</xsl:if></xsl:for-each></xsl:if></xsl:for-each>);
+				--dg: calc(0<xsl:for-each select="d"> + var(--g<xsl:value-of select="position()"/>) * <xsl:value-of select="."/></xsl:for-each>);
+			}
 			<xsl:for-each select="neighbor">
+				<xsl:variable name="nid" select="."/>
 				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" />, #fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
 					z-index: 40;
 					background: #DDF;
@@ -180,8 +196,15 @@
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="." />:checked ~ div .fox-m.to-<xsl:value-of select="." /> {
 					display: none;
 				}
+				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" /> {
+					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$nid"><xsl:if test="(b!=$pid) and (c!=$pid)">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if><xsl:if test="c=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * 1);</xsl:if>
+					</xsl:if></xsl:for-each></xsl:for-each>
+					z-index: calc(100000 + var(--nj) * 10000 + var(--nm) * 1000 - var(--dg));
+				}
 			</xsl:for-each>
 			<xsl:for-each select="jump">
+				<xsl:variable name="c" select="c"/>
+				<xsl:variable name="b" select="b"/>
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" />, #fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" />, #fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .goose-dead.node-<xsl:value-of select="b" /> {
 					z-index: 40;
 					background: #DDF;
@@ -200,6 +223,15 @@
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" />::after {
 					content: " Done";
 				}
+
+				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" /> {
+					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$c"><xsl:if test="b!=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if>
+					</xsl:if></xsl:for-each></xsl:for-each>
+					z-index: calc(1000000 + var(--nj) * 10);
+				}
+				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" /> {
+					z-index: 40;
+				}
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .goose-dead.node-<xsl:value-of select="b" /> {
 					z-index: 45;
 				}
@@ -209,6 +241,9 @@
 		
 		
 		<xsl:for-each select="$base/main/node">
+			.gooseInput-<xsl:value-of select="position()" />:checked ~ div.ft {
+				--g<xsl:value-of select="position()" />: 1;
+			}
 			<xsl:variable name="gid" select="position()"/>
 			<xsl:variable name="gci" select="g"/>
 			<xsl:if test="contains($geese,$gci)">
@@ -216,8 +251,8 @@
 				<xsl:variable name="pid" select="position()"/>
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goosea-<xsl:value-of select="$gid" />.node-<xsl:value-of select="position()" /> {
 					z-index: 50;
-					
 				}
+				
 				#goose-<xsl:value-of select="$gid" />-<xsl:value-of select="position()" />:checked ~ div .goose-<xsl:value-of select="$gid" />-dead.node-<xsl:value-of select="position()" /> {
 					display: block;
 				}

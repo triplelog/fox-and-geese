@@ -5,6 +5,7 @@
 	<x>531</x>
 	<y>570</y>
 	<g>1</g>
+	<s>17</s>
 	<neighbor>26</neighbor>
 	<neighbor>2</neighbor>
 	
@@ -12,12 +13,46 @@
 	<jump><a>1</a><b>26</b><c>32</c></jump>
 	<jump><a>1</a><b>2</b><c>3</c></jump>
 	
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>6</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>5</d>
+	<d>4</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>495</x>
 	<y>449</y>
 	<g>2</g>
+	<s>7</s>
 	<neighbor>1</neighbor>
 	<neighbor>23</neighbor>
 	<neighbor>3</neighbor>
@@ -27,12 +62,46 @@
 	<jump><a>2</a><b>3</b><c>4</c></jump>
 	<jump><a>2</a><b>3</b><c>6</c></jump>
 	
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>470</x>
 	<y>403</y>
 	<g>3</g>
+	<s>8</s>
 	<neighbor>2</neighbor>
 	<neighbor>4</neighbor>
 	<neighbor>6</neighbor>
@@ -41,12 +110,46 @@
 	<jump><a>3</a><b>2</b><c>1</c></jump>
 	<jump><a>3</a><b>6</b><c>18</c></jump>
 	
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>475</x>
 	<y>372</y>
 	<g>4</g>
+	<s>20</s>
 	<neighbor>3</neighbor>
 	<neighbor>5</neighbor>
 	<neighbor>6</neighbor>
@@ -55,12 +158,46 @@
 	<jump><a>4</a><b>5</b><c>14</c></jump>
 	<jump><a>4</a><b>6</b><c>7</c></jump>
 	
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>2</d>
+	<d>5</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	
 </node>
 
 <node>
 	<x>493</x>
 	<y>341</y>
 	<g>5</g>
+	<s>19</s>
 	<neighbor>4</neighbor>
 	<neighbor>14</neighbor>
 	<neighbor>7</neighbor>
@@ -71,12 +208,46 @@
 	<jump><a>5</a><b>7</b><c>18</c></jump>
 	<jump><a>5</a><b>13</b><c>9</c></jump>
 	
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>1</d>
+	<d>1</d>
+	<d>5</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>5</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	
 </node>
 
 <node>
 	<x>432</x>
 	<y>364</y>
 	<g>6</g>
+	<s>19</s>
 	<neighbor>4</neighbor>
 	<neighbor>7</neighbor>
 	<neighbor>3</neighbor>
@@ -86,12 +257,46 @@
 	<jump><a>6</a><b>3</b><c>2</c></jump>
 	<jump><a>6</a><b>18</b><c>17</c></jump>
 	
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>0</d>
+	<d>1</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>434</x>
 	<y>330</y>
 	<g>7</g>
+	<s>9</s>
 	<neighbor>18</neighbor>
 	<neighbor>5</neighbor>
 	<neighbor>6</neighbor>
@@ -102,17 +307,84 @@
 	<jump><a>7</a><b>6</b><c>4</c></jump>
 	<jump><a>7</a><b>11</b><c>10</c></jump>
 	
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>0</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>4</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>552</x>
 	<y>201</y>
 	<g>8</g>
+	<s>5</s>
 	<neighbor>9</neighbor>
 	<neighbor>14</neighbor>
 	
 	<jump><a>8</a><b>9</b><c>10</c></jump>
 	<jump><a>8</a><b>14</b><c>5</c></jump>
+	
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>7</d>
+	<d>9</d>
+	<d>8</d>
+	<d>8</d>
+	<d>7</d>
+	<d>7</d>
+	<d>6</d>
 	
 </node>
 
@@ -120,6 +392,7 @@
 	<x>503</x>
 	<y>171</y>
 	<g>9</g>
+	<s>9</s>
 	<neighbor>10</neighbor>
 	<neighbor>8</neighbor>
 	<neighbor>13</neighbor>
@@ -127,12 +400,46 @@
 	<jump><a>9</a><b>10</b><c>12</c></jump>
 	<jump><a>9</a><b>13</b><c>5</c></jump>
 	
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>7</d>
+	<d>9</d>
+	<d>8</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>6</d>
+	
 </node>
 
 <node>
 	<x>411</x>
 	<y>165</y>
 	<g>A</g>
+	<s>20</s>
 	<neighbor>12</neighbor>
 	<neighbor>9</neighbor>
 	<neighbor>11</neighbor>
@@ -141,12 +448,46 @@
 	<jump><a>10</a><b>9</b><c>8</c></jump>
 	<jump><a>10</a><b>11</b><c>7</c></jump>
 	
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>6</d>
+	<d>8</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	
 </node>
 
 <node>
 	<x>431</x>
 	<y>199</y>
 	<g>B</g>
+	<s>22</s>
 	<neighbor>13</neighbor>
 	<neighbor>25</neighbor>
 	<neighbor>7</neighbor>
@@ -156,12 +497,46 @@
 	<jump><a>11</a><b>25</b><c>17</c></jump>
 	<jump><a>11</a><b>7</b><c>6</c></jump>
 	
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>1</d>
+	<d>5</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	
 </node>
 
 <node>
 	<x>322</x>
 	<y>156</y>
 	<g>C</g>
+	<s>14</s>
 	<neighbor>17</neighbor>
 	<neighbor>10</neighbor>
 	<neighbor>15</neighbor>
@@ -172,12 +547,46 @@
 	<jump><a>12</a><b>15</b><c>16</c></jump>
 	<jump><a>12</a><b>25</b><c>18</c></jump>
 	
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>0</d>
+	<d>3</d>
+	<d>4</d>
+	<d>1</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>5</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	
 </node>
 
 <node>
 	<x>499</x>
 	<y>222</y>
 	<g>D</g>
+	<s>6</s>
 	<neighbor>14</neighbor>
 	<neighbor>11</neighbor>
 	<neighbor>5</neighbor>
@@ -186,12 +595,46 @@
 	<jump><a>13</a><b>11</b><c>25</c></jump>
 	<jump><a>13</a><b>5</b><c>7</c></jump>
 	
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>0</d>
+	<d>1</d>
+	<d>4</d>
+	<d>5</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>2</d>
+	<d>6</d>
+	<d>8</d>
+	<d>7</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	
 </node>
 
 <node>
 	<x>585</x>
 	<y>268</y>
 	<g>E</g>
+	<s>8</s>
 	<neighbor>5</neighbor>
 	<neighbor>8</neighbor>
 	<neighbor>13</neighbor>
@@ -199,17 +642,84 @@
 	<jump><a>14</a><b>5</b><c>4</c></jump>
 	<jump><a>14</a><b>13</b><c>11</c></jump>
 	
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>1</d>
+	<d>0</d>
+	<d>5</d>
+	<d>6</d>
+	<d>4</d>
+	<d>3</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>3</d>
+	<d>6</d>
+	<d>8</d>
+	<d>7</d>
+	<d>7</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	
 </node>
 
 <node>
 	<x>249</x>
 	<y>137</y>
 	<g>F</g>
+	<s>9</s>
 	<neighbor>16</neighbor>
 	<neighbor>12</neighbor>
 	
 	<jump><a>15</a><b>16</b><c>20</c></jump>
 	<jump><a>15</a><b>12</b><c>25</c></jump>
+	
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>1</d>
+	<d>4</d>
+	<d>5</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>2</d>
+	<d>2</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
 	
 </node>
 
@@ -217,6 +727,7 @@
 	<x>219</x>
 	<y>158</y>
 	<g>G</g>
+	<s>13</s>
 	<neighbor>20</neighbor>
 	<neighbor>15</neighbor>
 	<neighbor>24</neighbor>
@@ -225,12 +736,46 @@
 	<jump><a>16</a><b>20</b><c>21</c></jump>
 	<jump><a>16</a><b>24</b><c>17</c></jump>
 	
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>5</d>
+	<d>6</d>
+	<d>1</d>
+	<d>0</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>1</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>287</x>
 	<y>222</y>
 	<g>H</g>
+	<s>6</s>
 	<neighbor>19</neighbor>
 	<neighbor>12</neighbor>
 	<neighbor>25</neighbor>
@@ -243,12 +788,46 @@
 	<jump><a>17</a><b>24</b><c>16</c></jump>
 	<jump><a>17</a><b>18</b><c>6</c></jump>
 	
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>2</d>
+	<d>0</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>345</x>
 	<y>297</y>
 	<g>I</g>
+	<s>13</s>
 	<neighbor>25</neighbor>
 	<neighbor>23</neighbor>
 	<neighbor>22</neighbor>
@@ -262,17 +841,84 @@
 	<jump><a>18</a><b>7</b><c>5</c></jump>
 	<jump><a>18</a><b>6</b><c>3</c></jump>
 	
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>1</d>
+	<d>0</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>240</x>
 	<y>266</y>
 	<g>J</g>
+	<s>3</s>
 	<neighbor>20</neighbor>
 	<neighbor>17</neighbor>
 	
 	<jump><a>19</a><b>20</b><c>30</c></jump>
 	<jump><a>19</a><b>17</b><c>12</c></jump>
+	
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
 	
 </node>
 
@@ -280,6 +926,7 @@
 	<x>196</x>
 	<y>322</y>
 	<g>K</g>
+	<s>6</s>
 	<neighbor>30</neighbor>
 	<neighbor>19</neighbor>
 	<neighbor>16</neighbor>
@@ -292,17 +939,84 @@
 	<jump><a>20</a><b>21</b><c>22</c></jump>
 	<jump><a>20</a><b>31</b><c>29</c></jump>
 	
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>5</d>
+	<d>6</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>240</x>
 	<y>380</y>
 	<g>L</g>
+	<s>7</s>
 	<neighbor>22</neighbor>
 	<neighbor>20</neighbor>
 	
 	<jump><a>21</a><b>22</b><c>23</c></jump>
 	<jump><a>21</a><b>20</b><c>16</c></jump>
+	
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
 	
 </node>
 
@@ -310,6 +1024,7 @@
 	<x>279</x>
 	<y>399</y>
 	<g>M</g>
+	<s>11</s>
 	<neighbor>23</neighbor>
 	<neighbor>21</neighbor>
 	<neighbor>32</neighbor>
@@ -320,12 +1035,46 @@
 	<jump><a>22</a><b>32</b><c>31</c></jump>
 	<jump><a>22</a><b>18</b><c>7</c></jump>
 	
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	
 </node>
 
 <node>
 	<x>340</x>
 	<y>403</y>
 	<g>N</g>
+	<s>7</s>
 	<neighbor>18</neighbor>
 	<neighbor>22</neighbor>
 	<neighbor>2</neighbor>
@@ -336,16 +1085,83 @@
 	<jump><a>23</a><b>2</b><c>1</c></jump>
 	<jump><a>23</a><b>32</b><c>26</c></jump>
 	
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>2</d>
+	<d>1</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	
 </node>
 
 <node>
 	<x>249</x>
 	<y>200</y>
 	<g>O</g>
+	<s>9</s>
 	<neighbor>17</neighbor>
 	<neighbor>16</neighbor>
 	
 	<jump><a>24</a><b>17</b><c>25</c></jump>
+	
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>4</d>
+	<d>5</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>0</d>
+	<d>2</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
 	
 </node>
 
@@ -353,6 +1169,7 @@
 	<x>328</x>
 	<y>205</y>
 	<g>P</g>
+	<s>19</s>
 	<neighbor>12</neighbor>
 	<neighbor>18</neighbor>
 	<neighbor>11</neighbor>
@@ -363,12 +1180,46 @@
 	<jump><a>25</a><b>11</b><c>13</c></jump>
 	<jump><a>25</a><b>17</b><c>24</c></jump>
 	
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>0</d>
+	<d>4</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	
 </node>
 
 <node>
 	<x>23</x>
 	<y>559</y>
 	<g>Q</g>
+	<s>8</s>
 	<neighbor>1</neighbor>
 	<neighbor>32</neighbor>
 	<neighbor>28</neighbor>
@@ -377,15 +1228,82 @@
 	<jump><a>26</a><b>32</b><c>23</c></jump>
 	<jump><a>26</a><b>28</b><c>29</c></jump>
 	
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>7</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>5</d>
+	<d>4</d>
+	<d>0</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	
 </node>
 
 <node>
 	<x>95</x>
 	<y>560</y>
 	<g>R</g>
+	<s>20</s>
 	<neighbor>28</neighbor>
 	
 	<jump><a>27</a><b>28</b><c>29</c></jump>
+	
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>9</d>
+	<d>9</d>
+	<d>8</d>
+	<d>7</d>
+	<d>7</d>
+	<d>8</d>
+	<d>8</d>
+	<d>6</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>6</d>
+	<d>6</d>
+	<d>2</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
 	
 </node>
 
@@ -393,6 +1311,7 @@
 	<x>73</x>
 	<y>527</y>
 	<g>S</g>
+	<s>11</s>
 	<neighbor>27</neighbor>
 	<neighbor>29</neighbor>
 	<neighbor>26</neighbor>
@@ -400,12 +1319,46 @@
 	<jump><a>28</a><b>29</b><c>30</c></jump>
 	<jump><a>28</a><b>29</b><c>31</c></jump>
 	
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>8</d>
+	<d>8</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>7</d>
+	<d>7</d>
+	<d>5</d>
+	<d>4</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>5</d>
+	<d>5</d>
+	<d>1</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>109</x>
 	<y>476</y>
 	<g>T</g>
+	<s>17</s>
 	<neighbor>28</neighbor>
 	<neighbor>30</neighbor>
 	<neighbor>31</neighbor>
@@ -415,12 +1368,46 @@
 	<jump><a>29</a><b>28</b><c>26</c></jump>
 	<jump><a>29</a><b>31</b><c>20</c></jump>
 	
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>8</d>
+	<d>7</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>7</d>
+	<d>7</d>
+	<d>4</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>1</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>112</x>
 	<y>406</y>
 	<g>U</g>
+	<s>13</s>
 	<neighbor>29</neighbor>
 	<neighbor>20</neighbor>
 	<neighbor>31</neighbor>
@@ -429,12 +1416,46 @@
 	<jump><a>30</a><b>20</b><c>19</c></jump>
 	<jump><a>30</a><b>31</b><c>32</c></jump>
 	
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>6</d>
+	<d>7</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	<d>2</d>
+	
 </node>
 
 <node>
 	<x>180</x>
 	<y>432</y>
 	<g>V</g>
+	<s>9</s>
 	<neighbor>30</neighbor>
 	<neighbor>32</neighbor>
 	<neighbor>29</neighbor>
@@ -443,12 +1464,46 @@
 	<jump><a>31</a><b>32</b><c>22</c></jump>
 	<jump><a>31</a><b>29</b><c>28</c></jump>
 	
+	<d>3</d>
+	<d>3</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>7</d>
+	<d>6</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>6</d>
+	<d>6</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>0</d>
+	<d>1</d>
+	
 </node>
 
 <node>
 	<x>253</x>
 	<y>448</y>
 	<g>W</g>
+	<s>13</s>
 	<neighbor>23</neighbor>
 	<neighbor>26</neighbor>
 	<neighbor>31</neighbor>
@@ -458,6 +1513,39 @@
 	<jump><a>32</a><b>26</b><c>1</c></jump>
 	<jump><a>32</a><b>31</b><c>30</c></jump>
 	<jump><a>32</a><b>22</b><c>18</c></jump>
+	
+	<d>2</d>
+	<d>2</d>
+	<d>3</d>
+	<d>4</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>6</d>
+	<d>6</d>
+	<d>5</d>
+	<d>4</d>
+	<d>4</d>
+	<d>5</d>
+	<d>5</d>
+	<d>4</d>
+	<d>3</d>
+	<d>3</d>
+	<d>2</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>1</d>
+	<d>4</d>
+	<d>3</d>
+	<d>1</d>
+	<d>3</d>
+	<d>2</d>
+	<d>2</d>
+	<d>2</d>
+	<d>1</d>
+	<d>0</d>
 	
 </node>
 
