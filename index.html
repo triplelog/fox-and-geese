@@ -40,7 +40,38 @@
 		<input type="radio" name="level" id="l13"/>
 		
 	<div>
-	<div id="homebtn"><a href="#">Home</a></div>
+	
+	<div id="topright">
+		<span id="homebtn"><a href="#">Home</a></span>
+		<input type="checkbox" id="help" />
+		<label for="help" class="forhelp">Help</label>
+		<details open="true">
+			<summary>How to Play</summary>
+			The fox and geese alternate turns moving along the paths.
+			You play as the geese and will move first after clicking Start.
+			<details>
+				<summary>Legal Moves</summary>
+				<ul>
+					<li>Any one goose can move 1 space in any direction to an unoccupied city as long as there is a path between the cities.</li>
+					<li>The fox can also move to any unoccupied, connected city or it can jump over one goose to remove that goose from the game.</li>
+					<li>A jump must end on an unoccupied city on the same color path.</li>
+				</ul>
+			</details>
+			<details>
+				<summary>Winning</summary>
+				The goal for the fox is to reach Rome (or kill all but one goose, guaranteeing victory).
+				The goal for the geese is to trap the fox so that is has no moves.
+			</details>
+			<details>
+				<summary>Mechanics</summary>
+				To move, click a goose and then click the city to move it to. Once you have clicked on a goose you must move it or leave it where it is!
+				You only have 60 seconds each turn to make your decision.
+				After taking your turn, make the fox's move by clicking the box in the upper left two times (for a regular move) or three times (for a jump).
+			
+			</details>
+			
+		</details>
+	</div>
 	<img id="bg" src="bg.svg" />
 	<iframe src="l1.xml" class="l1"  ></iframe>
 	<iframe src="l2.xml" class="l2"  ></iframe>
@@ -64,23 +95,23 @@
 			<hr />
 			Choose Level:
 			<br />
-				<span class="le">Easy</span><span><a class="ll" href="#l1">1</a><a class="wl2" href="l1.xml#w">✓</a><a class="wl" href="l1.xml#w"></a></span>
-				<span><a class="ll" href="#l2">2</a><a class="wl2" href="l2.xml#w">✓</a><a class="wl" href="l2.xml#w"></a></span>
-				<span><a class="ll" href="#l3">3</a><a class="wl2" href="l3.xml#w">✓</a><a class="wl" href="l3.xml#w"></a></span>
-				<span><a class="ll" href="#l4">4</a><a class="wl2" href="l4.xml#w">✓</a><a class="wl" href="l4.xml#w"></a></span>
+				<span class="le">Easy</span><span class="la"><a class="ll" href="#l1">1</a><a class="wl2" href="l1.xml#w">✓</a><a class="wl" href="l1.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l2">2</a><a class="wl2" href="l2.xml#w">✓</a><a class="wl" href="l2.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l3">3</a><a class="wl2" href="l3.xml#w">✓</a><a class="wl" href="l3.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l4">4</a><a class="wl2" href="l4.xml#w">✓</a><a class="wl" href="l4.xml#w"></a></span>
 				
 			<br />
-				<span class="lm">Medium</span><span><a class="ll" href="#l5">5</a><a class="wl2" href="l5.xml#w">✓</a><a class="wl" href="l5.xml#w"></a></span>
-				<span><a class="ll" href="#l6">6</a><a class="wl2" href="l6.xml#w">✓</a><a class="wl" href="l6.xml#w"></a></span>
-				<span><a class="ll" href="#l7">7</a><a class="wl2" href="l7.xml#w">✓</a><a class="wl" href="l7.xml#w"></a></span>
-				<span><a class="ll" href="#l8">8</a><a class="wl2" href="l8.xml#w">✓</a><a class="wl" href="l8.xml#w"></a></span>
-				<span><a class="ll" href="#l9">9</a><a class="wl2" href="l9.xml#w">✓</a><a class="wl" href="l9.xml#w"></a></span>
+				<span class="lm">Medium</span><span class="la"><a class="ll" href="#l5">5</a><a class="wl2" href="l5.xml#w">✓</a><a class="wl" href="l5.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l6">6</a><a class="wl2" href="l6.xml#w">✓</a><a class="wl" href="l6.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l7">7</a><a class="wl2" href="l7.xml#w">✓</a><a class="wl" href="l7.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l8">8</a><a class="wl2" href="l8.xml#w">✓</a><a class="wl" href="l8.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l9">9</a><a class="wl2" href="l9.xml#w">✓</a><a class="wl" href="l9.xml#w"></a></span>
 				
 				<br />
-				<span class="lh">Hard</span><span><a class="ll" href="#l10">10</a><a class="wl2" href="l10.xml#w">✓</a><a class="wl" href="l10.xml#w"></a></span>
-				<span><a class="ll" href="#l11">11</a><a class="wl2" href="l11.xml#w">✓</a><a class="wl" href="l11.xml#w"></a></span>
-				<span><a class="ll" href="#l12">12</a><a class="wl2" href="l12.xml#w">✓</a><a class="wl" href="l12.xml#w"></a></span>
-				<span><a class="ll" href="#l13">13</a><a class="wl2" href="l13.xml#w">✓</a><a class="wl" href="l13.xml#w"></a></span>
+				<span class="lh">Hard</span><span class="la"><a class="ll" href="#l10">10</a><a class="wl2" href="l10.xml#w">✓</a><a class="wl" href="l10.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l11">11</a><a class="wl2" href="l11.xml#w">✓</a><a class="wl" href="l11.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l12">12</a><a class="wl2" href="l12.xml#w">✓</a><a class="wl" href="l12.xml#w"></a></span>
+				<span class="la"><a class="ll" href="#l13">13</a><a class="wl2" href="l13.xml#w">✓</a><a class="wl" href="l13.xml#w"></a></span>
 				
 			
 			

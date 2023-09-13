@@ -3,65 +3,33 @@
 <xsl:variable name="base" select="document('base.xml')"/>
 <xsl:template match="/">
 	<xsl:variable name="geese" select="g"/>
+	<xsl:variable name="foxinitial" select="$base/main/fox"/>
+	<xsl:variable name="goal" select="$base/main/goal"/>
 	<html>
 	<head>
 	<style>
 	input {
 		display: none;
 	}
-	#topright {
-		position: absolute;
+	
+	input[type=reset] {
 		display: block;
+		position: absolute;
 		right: 10px;
 		top: 10px;
-		z-index: 1000000000;
-		min-width: 10rem;
-	}
-	input[type=reset]{
-		display: block;
-		position: absolute;
-		right: 0px;
-		top: 0px;
-		cursor: pointer;
-	}
-	.forhelp {
-		display: block;
-		position: absolute;
-		right: 0px;
-		top: 32px;
-		cursor: pointer;
-		text-shadow: unset;
-		background: #CCC;
 		border: 1px solid black;
 		border-radius: 2px;
 		padding: 2px 4px;
 		font-size: 1rem;
+		background: #DDD;
+		cursor: pointer;
+		text-shadow: unset;
+		z-index: 1000000000;
 	}
-	#help ~ details {
-		display: none;
-		background: white;
-		width: 360px;
-		position: absolute;
-		right: 0px;
-		top: 56px;
-		padding: 4px;
-	}
-	#help ~ details details {
-		border: 1px solid black;
-		padding: 2px;
-	}
-	#help:checked ~ details {
-		display: block;
-	}
-	#help ~ .forhelp::before {
-		content: "Show ";
-	}
-	#help:checked ~ .forhelp::before {
-		content: "Hide ";
-	}
+	
 	@keyframes turn {
 		from {z-index: 1;}
-		to {z-index: 60;}
+		to {z-index: 600;}
 	}
 	@keyframes sixty {
 		from {top: 0rem;}
@@ -73,6 +41,7 @@
 	body {
 		--w: 400;
 		--ww: 1.5rem;
+		font-family: Verdana, sans-serif;
 	}
 	@media screen and (min-width: 500px) and (min-height: 500px){
 		body  {--w: 500; --ww: 1.5rem;}
@@ -108,7 +77,7 @@
 		animation-name: turn;
   		animation-duration: 60s;
 		animation-timing-function: linear;
-		z-index: 60;
+		z-index: 600;
 	}
 	label {
 		font-size: calc(var(--ww) * 0.45);
@@ -152,10 +121,21 @@
 			position: absolute;
 			display: block;
 			background: #CCC;
+			user-select: none;
 		}
-		.node-2 {
+		 
+		.node-<xsl:value-of select="$goal"/> {
 			border: 2px solid red;
 			outline: 2px solid white;
+		}
+		.node.block {
+			z-index: 1000000000;
+			background: transparent;
+			cursor: default;
+			width: calc(var(--ww) * 1.5);
+			height: calc(var(--ww) * 1.5);
+			border: none;
+			outline: none;
 		}
 		.blank {
 			z-index: 1;
@@ -172,41 +152,35 @@
 		.ft .goosea, .fox, .fox-a, .blank {
 			cursor: default;
 		}
-		#startLabel {
-			z-index: 10000000;
+		#startLabel, .fox-loses, .fox-wins {
 			position: absolute;
 			display: block;
-			background: #DDF;
 			left: 10px;
 			top: 10px;
-			cursor: pointer;
 			width: calc(var(--ww) * 3.5);
 			height: calc(var(--ww) * 1.5);
 			line-height: calc(var(--ww) * 1.5);
 			opacity: 1;
 			text-shadow: unset;
+		}
+		#startLabel {
+			z-index: 10000000;
+			background: #DDF;
+			cursor: pointer;
 		}
 		#start:checked + #startLabel {
 			display: none;
 		}
 		.fi:active ~ .ft, .gi:active ~ .gt, .fi:active ~ .gt #clock > div {
-			z-index: 80;
+			z-index: 800;
 			animation-name: none;
 		}
 		.fox-loses, .fox-wins {
 			z-index: 1;
 			background: #AFA;
-			left: 10px;
-			top: 10px;
 			cursor: default;
-			width: calc(var(--ww) * 3.5);
-			height: calc(var(--ww) * 1.5);
-			line-height: calc(var(--ww) * 1.5);
-			opacity: 1;
-			text-shadow: unset;
 			border: 1px solid black;
-			position: absolute;
-			display: block;
+			overflow: hidden;
 		}
 		.fox-loses {
 			line-height: max(1rem,calc(var(--ww) * 1.5 - 2rem));
@@ -217,7 +191,6 @@
 	.ft {
 		<xsl:for-each select="$base/main/node">--g<xsl:value-of select="position()"/>: 0;
 		</xsl:for-each>
-		--f: 15;
 	}
 	.gt {
 		<xsl:for-each select="$base/main/node">--g<xsl:value-of select="position()"/>: 0;
@@ -227,7 +200,7 @@
 	.gt #clock {
 		z-index: var(--ng);
 	}
-	#fox-2:checked ~ .gt #clock {
+	#fox-<xsl:value-of select="$goal"/>:checked ~ .gt #clock {
 		z-index: 0;
 	}
 		<xsl:for-each select="$base/main/node">
@@ -249,17 +222,30 @@
 		</xsl:for-each>
 		<xsl:for-each select="$base/main/node">
 			<xsl:variable name="pid" select="position()"/>
+			
 			.fox-j.c-<xsl:value-of select="$pid" /> {
-				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$pid"> + var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
+				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:variable name="a" select="position()"/><xsl:for-each select="jump"><xsl:if test="$a=$pid"> + <xsl:if test="c=$goal">3 * </xsl:if>var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
 			}
 			.fox-m.to-<xsl:value-of select="$pid" /> {
-				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$pid"> + var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
-				--nm: calc(1<xsl:for-each select="$base/main/node"><xsl:if test="position()=$pid"><xsl:for-each select="neighbor"><xsl:if test=".!=$pid"> + (1 - var(--g<xsl:value-of select="."/>))</xsl:if></xsl:for-each></xsl:if></xsl:for-each>);
+				--nj: calc(0<xsl:for-each select="$base/main/node"><xsl:variable name="a" select="position()"/><xsl:for-each select="jump"><xsl:if test="$a=$pid"> + <xsl:if test="c=$goal">3 * </xsl:if>var(--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>)</xsl:if></xsl:for-each></xsl:for-each>);
+				--nm: calc(1<xsl:for-each select="$base/main/node"><xsl:if test="position()=$pid"><xsl:for-each select="neighbor"><xsl:if test=".!=$pid"> + <xsl:if test=".=$goal">7 * </xsl:if>(1 - var(--g<xsl:value-of select="."/>))</xsl:if></xsl:for-each></xsl:if></xsl:for-each>);
 				--dg: calc(0<xsl:for-each select="d"> + var(--g<xsl:value-of select="position()"/>) * <xsl:value-of select="."/></xsl:for-each>);
+			}
+			#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" /> {
+				z-index: 40;
+				background: #DDF;
+				left: 10px;
+				top: 10px;
+				cursor: pointer;
+				width: calc(var(--ww) * 3.5);
+				height: calc(var(--ww) * 1.5);
+				line-height: calc(var(--ww) * 1.5);
+				opacity: 1;
+				text-shadow: unset;
 			}
 			<xsl:for-each select="neighbor">
 				<xsl:variable name="nid" select="."/>
-				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" />, #fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
+				#fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." /> {
 					z-index: 40;
 					background: #DDF;
 					left: 10px;
@@ -277,11 +263,18 @@
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="." />:checked ~ div .fox-m.to-<xsl:value-of select="." /> {
 					display: none;
 				}
-				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.node-<xsl:value-of select="$pid" /> {
-					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$nid"><xsl:if test="(b!=$pid) and (c!=$pid)">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if><xsl:if test="c=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * 1);</xsl:if>
+				<xsl:if test="$nid!=$goal">
+				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.to-<xsl:value-of select="$nid" /> {
+					<xsl:for-each select="$base/main/node"><xsl:variable name="a" select="position()"/><xsl:for-each select="jump"><xsl:if test="$a=$nid"><xsl:if test="(b!=$pid) and (c!=$pid)">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if><xsl:if test="c=$pid">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * 1);</xsl:if>
 					</xsl:if></xsl:for-each></xsl:for-each>
 					z-index: calc(100000 + var(--nj) * 10000 + var(--nm) * 1000 - var(--dg));
 				}
+				</xsl:if>
+				<xsl:if test="$nid=$goal">
+				#fox-<xsl:value-of select="$pid" />:checked ~ div .fox-m.to-<xsl:value-of select="$nid" /> {
+					z-index: 1100000;
+				}
+				</xsl:if>
 			</xsl:for-each>
 			<xsl:for-each select="jump">
 				<xsl:variable name="c" select="c"/>
@@ -304,12 +297,19 @@
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" />::after {
 					content: " Done";
 				}
-
+				<xsl:if test="$c!=$goal">
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" /> {
-					<xsl:for-each select="$base/main/node"><xsl:for-each select="jump"><xsl:if test="a=$c"><xsl:if test="b!=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if>
+					<xsl:for-each select="$base/main/node"><xsl:variable name="a" select="position()"/><xsl:for-each select="jump"><xsl:if test="$a=$c"><xsl:if test="b!=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: calc(var(--g<xsl:value-of select="b"/>) * (1 - var(--g<xsl:value-of select="c"/>)));</xsl:if><xsl:if test="b=$b">--j<xsl:value-of select="b"/>-<xsl:value-of select="c"/>: 0;</xsl:if>
 					</xsl:if></xsl:for-each></xsl:for-each>
 					z-index: calc(1000000 + var(--nj) * 10);
 				}
+				</xsl:if>
+				<xsl:if test="$c=$goal">
+				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="b" />:checked ~ div .fox-j.node-<xsl:value-of select="$pid" />.c-<xsl:value-of select="c" /> {
+					
+					z-index: 1100000;
+				}
+				</xsl:if>
 				#fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" />:checked ~ div .fox.node-<xsl:value-of select="c" /> {
 					z-index: 40;
 				}
@@ -363,42 +363,14 @@
 		<form action="/">
 			<input type="radio" name="start" class="fi" id="start" />
 			<label for="start" id="startLabel">Start</label>
-			<div id="topright">
-				<input type="reset" value="Restart"/>
-				<input type="checkbox" id="help" />
-				<label for="help" class="forhelp">Help</label>
-				<details open="true">
-					<summary>How to Play</summary>
-					The fox and geese alternate turns moving along the paths.
-					You play as the geese and will move first after clicking Start.
-					<details>
-						<summary>Legal Moves</summary>
-						Each turn, any one goose can move 1 space in any direction to an unoccupied city as long as there is a path between the cities.
-						The fox can also move to any unoccupied, connected city or it can jump over one goose to remove that goose from the game.
-						A jump must end on an unoccupied city on the same color path.
-					</details>
-					<details>
-						<summary>Winning</summary>
-						The goal for the fox is to reach Rome (or kill all but one goose, guaranteeing victory).
-						The goal for the geese is to trap the fox so that is has no moves.
-					</details>
-					<details>
-						<summary>Mechanics</summary>
-						To move, click a goose and then click the city to move it to. Once you have clicked on a goose you must move it or leave it where it is!
-						You only have 60 seconds each turn to make your decision.
-						After taking your turn, make the fox's move by clicking the box in the upper left two times (for a regular move) or three times (for a jump).
-					
-					</details>
-					
-				</details>
-			</div>
+			<input type="reset" value="Restart"/>
 			
 
 			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
 				<input type="radio" name="fox" class="fi">
 				<xsl:attribute name="id">fox-<xsl:value-of select="position()" /></xsl:attribute>
-				<xsl:if test="$pid=15"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
+				<xsl:if test="$pid=$foxinitial"><xsl:attribute name="checked"></xsl:attribute></xsl:if>
 				</input>
 				<xsl:for-each select="neighbor">
 					<input type="radio" name="fox">
@@ -408,8 +380,8 @@
 				</xsl:for-each>
 				<xsl:for-each select="jump">
 					<input type="radio" name="fox">
-					<xsl:attribute name="id">fox-j<xsl:value-of select="a" />-<xsl:value-of select="c" /></xsl:attribute>
-					<xsl:attribute name="class">fox-a<xsl:value-of select="a" /> fox-b<xsl:value-of select="b" /> fox-c<xsl:value-of select="c"/></xsl:attribute>
+					<xsl:attribute name="id">fox-j<xsl:value-of select="$pid" />-<xsl:value-of select="c" /></xsl:attribute>
+					<xsl:attribute name="class">fox-a<xsl:value-of select="$pid" /> fox-b<xsl:value-of select="b" /> fox-c<xsl:value-of select="c"/></xsl:attribute>
 					</input>
 				</xsl:for-each>
 			</xsl:for-each>
@@ -535,6 +507,9 @@
 				</xsl:if>
 				<label>
 				<xsl:attribute name="class">node blank node-<xsl:value-of select="position()" /></xsl:attribute>
+				</label>
+				<label>
+				<xsl:attribute name="class">node block node-<xsl:value-of select="position()" /></xsl:attribute>
 				</label>
 			</xsl:for-each>
 			</div>

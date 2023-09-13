@@ -1,5 +1,6 @@
 body {
 	--w: 400;
+	font-family: Verdana, sans-serif;
 }
 @media screen and (min-width: 500px) and (min-height: 532px){
 	body  {--w: 500;}
@@ -35,16 +36,10 @@ iframe {
 	border: 0px;
 	display: none;
 }
-#homebtn {
-	display: none;
-}
 #menu {
 	z-index: 3;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 #menu > div {
 	width: clamp(315px,67%,900px);
@@ -57,32 +52,25 @@ iframe {
 	font-size: calc(var(--w) * 0.03px);
 	text-align: center;
 }
-#menu > div > span {
+.la, .le, .lm, .lh {
 	display: inline-block;
-	width: 2rem;
 	height: 2rem;
 	position: relative;
+	vertical-align: middle;
 	line-height: 2rem;
+}
+.la {
+	width: 2rem;
 	font-size: 1.25rem;
 	text-align: center;
 	text-decoration: none;
 	margin: 6px 4px;
-	vertical-align: middle;
 }
-#menu > div > span.le {
-	width: unset;
-	min-width: 6.75rem;
-	text-align: left;
+.le, .lh {
+	min-width: 6.5rem;
 }
-#menu > div > span.lm {
-	width: unset;
-	min-width: 5.75rem;
-	text-align: left;
-}
-#menu > div > span.lh {
-	width: unset;
-	min-width: 6.75rem;
-	text-align: left;
+.lm {
+	min-width: 5.5rem;
 }
 details {
 	padding: 4px;
@@ -129,19 +117,69 @@ a.wl:visited {
 input:target ~ div #menu {
 	z-index: -1;
 }
-input:target ~ div #homebtn {
-	display: block;
+
+
+#topright {
+	display: none;
 	position: absolute;
-	top: -18px;
 	right: 10px;
-	height: 16px;
+	top: 38px;
+	z-index: 1000000000;
+	min-width: 10rem;
+	font-size: 1rem;
+}
+.forhelp, #homebtn {
+	display: inline-block;
+	right: 0px;
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 2px;
+	padding: 2px 4px;
+	background: #DDD;
+	cursor: pointer;
+}
+input[type=reset]{
+	top: 0px;
+}
+.forhelp {
+	top: 27px;
+}
+#help ~ details {
+	display: none;
 	background: white;
-	padding: 1px 4px;
+	width: min(90vw,30rem);
+	position: absolute;
+	right: 0px;
+	top: 60px;
+	padding: 4px;
+}
+#help ~ details details {
+	border: 1px solid black;
+	padding: 2px;
+}
+#help:checked ~ details {
+	display: block;
+}
+#help ~ .forhelp::before {
+	content: "Show ";
+}
+#help:checked ~ .forhelp::before {
+	content: "Hide ";
+}
+
+
+input:target ~ div #topright {
+	display: block;
 }
 #homebtn a {
 	text-decoration: none;
 	font-size: 0.9rem;
 	color: black;
+}
+#container, #menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 #container {
 	width: 100%;
@@ -152,9 +190,6 @@ input:target ~ div #homebtn {
 	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
 	background-color:#282828;
 	background-size:16px 16px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	height: 100vh;
 }
 #container > div {
