@@ -84,6 +84,33 @@ for (var i=0;i<32;i++){
 let html = nunjucks.render("xmltemplate.xml",{nodes:nodes,moves:moves,jumps:jumps});
 fs.writeFileSync('base.xml',html);
 
+let savedg = {};
+savedg[22]="12345789BDGHIJMNPQSTUW";
+savedg[21]="235679ACDEHIJKMNQRSTU";
+savedg[20]="1234568BCDHIJMOPQSVW";
+savedg[19]="1279ACDHIJLMOPQRSUW";
+savedg[18]="12357CDGHJLMNORSUW";
+savedg[17]="19ABCHIJLMPQRSTUW";
+savedg[16]="1258ABCIJLMNPQVW";
+savedg[15]="239AHIJKLMNOPRS";
+savedg[14]="89ACEHIJLMNSUV";
+savedg[13]=[];
+savedg[13].push("24568BEJKNPTV");
+savedg[13].push("1689ADHJLNOUW");
+savedg[13].push("47CDEGHLMNOSV");
+savedg[13].push("12458BDJKLNRU");
+for (var gc=1;gc<14;gc++){
+	let geese;
+	if (gc < 10){
+		geese = savedg[23-gc];
+	}
+	else {
+		geese = savedg[13][gc-11];
+	}
+	let html2 = nunjucks.render("xmllevel.xml",{g:geese});
+	fs.writeFileSync('l'+gc+'.xml',html2);
+}
+/*
 for (var gc=1;gc<26;gc++){
 	let geese = "";
 	for (var i=0;i<32;i++){
@@ -101,6 +128,6 @@ for (var gc=1;gc<26;gc++){
 	}
 	let html2 = nunjucks.render("xmllevel.xml",{g:geese});
 	fs.writeFileSync('l'+gc+'.xml',html2);
-}
+}*/
 let html3 = nunjucks.render("nojs.html",{});
 fs.writeFileSync('index.html',html3);
