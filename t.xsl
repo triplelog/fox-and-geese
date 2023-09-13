@@ -9,13 +9,63 @@
 	input {
 		display: none;
 	}
+	#topright {
+		position: absolute;
+		display: block;
+		right: 10px;
+		top: 10px;
+		z-index: 1000000000;
+		min-width: 10rem;
+	}
+	input[type=reset]{
+		display: block;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		cursor: pointer;
+	}
+	.forhelp {
+		display: block;
+		position: absolute;
+		right: 0px;
+		top: 32px;
+		cursor: pointer;
+		text-shadow: unset;
+		background: #CCC;
+		border: 1px solid black;
+		border-radius: 2px;
+		padding: 2px 4px;
+		font-size: 1rem;
+	}
+	#help ~ details {
+		display: none;
+		background: white;
+		width: 360px;
+		position: absolute;
+		right: 0px;
+		top: 56px;
+		padding: 4px;
+	}
+	#help ~ details details {
+		border: 1px solid black;
+		padding: 2px;
+	}
+	#help:checked ~ details {
+		display: block;
+	}
+	#help ~ .forhelp::before {
+		content: "Show ";
+	}
+	#help:checked ~ .forhelp::before {
+		content: "Hide ";
+	}
 	@keyframes turn {
 		from {z-index: 1;}
 		to {z-index: 60;}
 	}
 	@keyframes sixty {
 		from {top: 0rem;}
-		to {top: calc(-58 * var(--ww));}
+		to {top: calc(-58 * var(--ww) * 1.5);}
 	}
 	html {
 		overflow: hidden;
@@ -73,8 +123,8 @@
 		top: 10px;
 		display: block;
 		overflow: hidden;
-		width: calc(var(--ww) * 2.5);
-		height: calc(var(--ww) + 2px);
+		width: calc(var(--ww) * 3.5);
+		height: calc(var(--ww) * 1.5 + 2px);
 		font-size: calc(var(--ww) * 0.5);
 		background: white;
 		border: 1px solid black;
@@ -88,11 +138,11 @@
 		animation-timing-function: steps(59,jump-none);
 	}
 	#clock > div > div {
-		width: calc(var(--ww) * 2.5);
+		width: calc(var(--ww) * 3.5);
 		display: inline-block;
-		height: var(--ww);
+		height: calc(var(--ww) * 1.5);
 		text-align: center;
-		line-height: var(--ww);
+		line-height: calc(var(--ww) * 1.5);
 	}
 		.node {
 			width: calc(var(--ww) * 0.625);
@@ -102,6 +152,10 @@
 			position: absolute;
 			display: block;
 			background: #CCC;
+		}
+		.node-2 {
+			border: 2px solid red;
+			outline: 2px solid white;
 		}
 		.blank {
 			z-index: 1;
@@ -118,6 +172,23 @@
 		.ft .goosea, .fox, .fox-a, .blank {
 			cursor: default;
 		}
+		#startLabel {
+			z-index: 10000000;
+			position: absolute;
+			display: block;
+			background: #DDF;
+			left: 10px;
+			top: 10px;
+			cursor: pointer;
+			width: calc(var(--ww) * 3.5);
+			height: calc(var(--ww) * 1.5);
+			line-height: calc(var(--ww) * 1.5);
+			opacity: 1;
+			text-shadow: unset;
+		}
+		#start:checked + #startLabel {
+			display: none;
+		}
 		.fi:active ~ .ft, .gi:active ~ .gt, .fi:active ~ .gt #clock > div {
 			z-index: 80;
 			animation-name: none;
@@ -128,14 +199,17 @@
 			left: 10px;
 			top: 10px;
 			cursor: default;
-			width: calc(var(--ww) * 2.5);
-			height: var(--ww);
+			width: calc(var(--ww) * 3.5);
+			height: calc(var(--ww) * 1.5);
+			line-height: calc(var(--ww) * 1.5);
 			opacity: 1;
 			text-shadow: unset;
-			line-height: var(--ww);
 			border: 1px solid black;
 			position: absolute;
 			display: block;
+		}
+		.fox-loses {
+			line-height: max(1rem,calc(var(--ww) * 1.5 - 2rem));
 		}
 		.fox-wins {
 			background: #FAA;
@@ -191,11 +265,11 @@
 					left: 10px;
 					top: 10px;
 					cursor: pointer;
-					width: calc(var(--ww) * 2.5);
-					height: var(--ww);
+					width: calc(var(--ww) * 3.5);
+					height: calc(var(--ww) * 1.5);
+					line-height: calc(var(--ww) * 1.5);
 					opacity: 1;
 					text-shadow: unset;
-					line-height: var(--ww);
 				}
 				#fox-m<xsl:value-of select="$pid" />-<xsl:value-of select="." />:checked ~ div .fox.node-<xsl:value-of select="." />::after {
 					content: " Done";
@@ -218,11 +292,11 @@
 					left: 10px;
 					top: 10px;
 					cursor: pointer;
-					width: calc(var(--ww) * 2.5);
-					height: var(--ww);
+					width: calc(var(--ww) * 3.5);
+					height: calc(var(--ww) * 1.5);
+					line-height: calc(var(--ww) * 1.5);
 					opacity: 1;
 					text-shadow: unset;
-					line-height: var(--ww);
 				}
 				#fox-<xsl:value-of select="$pid" />:checked ~ .gooseInput-<xsl:value-of select="c" />:checked ~ div .fox-j.c-<xsl:value-of select="c" /> {
 					display: none;
@@ -286,6 +360,39 @@
 	</style>
 	</head>
 		<body>
+		<form action="/">
+			<input type="radio" name="start" class="fi" id="start" />
+			<label for="start" id="startLabel">Start</label>
+			<div id="topright">
+				<input type="reset" value="Restart"/>
+				<input type="checkbox" id="help" />
+				<label for="help" class="forhelp">Help</label>
+				<details open="true">
+					<summary>How to Play</summary>
+					The fox and geese alternate turns moving along the paths.
+					You play as the geese and will move first after clicking Start.
+					<details>
+						<summary>Legal Moves</summary>
+						Each turn, any one goose can move 1 space in any direction to an unoccupied city as long as there is a path between the cities.
+						The fox can also move to any unoccupied, connected city or it can jump over one goose to remove that goose from the game.
+						A jump must end on an unoccupied city on the same color path.
+					</details>
+					<details>
+						<summary>Winning</summary>
+						The goal for the fox is to reach Rome (or kill all but one goose, guaranteeing victory).
+						The goal for the geese is to trap the fox so that is has no moves.
+					</details>
+					<details>
+						<summary>Mechanics</summary>
+						To move, click a goose and then click the city to move it to. Once you have clicked on a goose you must move it or leave it where it is!
+						You only have 60 seconds each turn to make your decision.
+						After taking your turn, make the fox's move by clicking the box in the upper left two times (for a regular move) or three times (for a jump).
+					
+					</details>
+					
+				</details>
+			</div>
+			
 
 			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
@@ -376,6 +483,10 @@
 			<div class="game ft">
 			<label class="fox-loses">
 				You won!!
+				<br />
+				<span style="font-size: 0.8rem; line-height: 1rem;">
+				<a href="#w">Click to record your win</a>, then go home for a new level.
+				</span>
 			</label>
 			<xsl:for-each select="$base/main/node">
 				<xsl:variable name="pid" select="position()"/>
@@ -427,6 +538,7 @@
 				</label>
 			</xsl:for-each>
 			</div>
+		</form>
 		</body>
 	</html>
 </xsl:template>

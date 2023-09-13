@@ -84,5 +84,23 @@ for (var i=0;i<32;i++){
 let html = nunjucks.render("xmltemplate.xml",{nodes:nodes,moves:moves,jumps:jumps});
 fs.writeFileSync('base.xml',html);
 
-let html2 = nunjucks.render("xmllevel.xml",{g:geese});
-fs.writeFileSync('l3.xml',html2);
+for (var gc=1;gc<26;gc++){
+	let geese = "";
+	for (var i=0;i<32;i++){
+		if (i == fox){
+			
+		}
+		else {
+			if (Math.random() < 0.5){
+				geese += gci[i];
+			}
+			else {
+				
+			}
+		}
+	}
+	let html2 = nunjucks.render("xmllevel.xml",{g:geese});
+	fs.writeFileSync('l'+gc+'.xml',html2);
+}
+let html3 = nunjucks.render("nojs.html",{});
+fs.writeFileSync('index.html',html3);

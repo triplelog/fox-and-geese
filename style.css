@@ -1,28 +1,28 @@
 body {
 	--w: 400;
 }
-@media screen and (min-width: 500px) and (min-height: 500px){
+@media screen and (min-width: 500px) and (min-height: 532px){
 	body  {--w: 500;}
 }
-@media screen and (min-width: 600px) and (min-height: 600px){
+@media screen and (min-width: 600px) and (min-height: 632px){
 	body  {--w: 600;}
 }
-@media screen and (min-width: 750px) and (min-height: 750px){
+@media screen and (min-width: 750px) and (min-height: 782px){
 	body  {--w: 750;}
 }
-@media screen and (min-width: 900px) and (min-height: 900px){
+@media screen and (min-width: 900px) and (min-height: 932px){
 	body  {--w: 900;}
 }
-@media screen and (min-width: 1200px) and (min-height: 1200px){
+@media screen and (min-width: 1200px) and (min-height: 1232px){
 	body  {--w: 1200;}
 }
-@media screen and (min-width: 1500px) and (min-height: 1500px){
+@media screen and (min-width: 1500px) and (min-height: 1532px){
 	body  {--w: 1500;}
 }
-@media screen and (min-width: 1800px) and (min-height: 1800px){
+@media screen and (min-width: 1800px) and (min-height: 1832px){
 	body  {--w: 1800;}
 }
-iframe, #container, #bg, #fg {
+iframe, #container, #bg, #fg, #menu {
 	position: absolute;
 	display: block;
 	top:0px;
@@ -33,6 +33,115 @@ iframe {
 	height: calc(var(--w) * 1px);
 	z-index: 10000;
 	border: 0px;
+	display: none;
+}
+#homebtn {
+	display: none;
+}
+#menu {
+	z-index: 3;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#menu > div {
+	width: clamp(315px,67%,900px);
+	height: clamp(310px,67%,900px);
+	background: rgba(255,255,255,0.9);
+	border: 8px solid black;
+	padding: 0.75rem;
+}
+#menu > div > div:nth-child(1) {
+	font-size: calc(var(--w) * 0.03px);
+	text-align: center;
+}
+#menu > div > span {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	position: relative;
+	line-height: 2rem;
+	font-size: 1.25rem;
+	text-align: center;
+	text-decoration: none;
+	margin: 6px 4px;
+	vertical-align: middle;
+}
+#menu > div > span.le {
+	width: unset;
+	min-width: 6.75rem;
+	text-align: left;
+}
+#menu > div > span.lm {
+	width: unset;
+	min-width: 5.75rem;
+	text-align: left;
+}
+#menu > div > span.lh {
+	width: unset;
+	min-width: 6.75rem;
+	text-align: left;
+}
+details {
+	padding: 4px;
+}
+details details {
+	border: 1px solid black;
+	padding: 2px;
+}
+a.ll, a.wl, a.wl2 {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-decoration: none;
+	border: 2px solid black;
+	outline: 2px solid black;
+	color: black;
+}
+a.ll {
+	background-color: white;
+}
+a.wl, a.wl2 {
+	pointer-events: none;
+}
+a.wl2 {
+	color: white;
+	font-size: 1rem;
+	line-height: 1rem;
+	text-align: left;
+	left: 3px;
+	top: 2px;
+	border: none;
+	outline: none;
+}
+a.wl2:visited {
+	color: black;
+}
+a.wl:visited {
+	border-color: #0A0;
+	outline-color: #6F6;
+}
+input:target ~ div #menu {
+	z-index: -1;
+}
+input:target ~ div #homebtn {
+	display: block;
+	position: absolute;
+	top: -18px;
+	right: 10px;
+	height: 16px;
+	background: white;
+	padding: 1px 4px;
+}
+#homebtn a {
+	text-decoration: none;
+	font-size: 0.9rem;
+	color: black;
 }
 #container {
 	width: 100%;
@@ -60,4 +169,8 @@ iframe {
 }
 #bg {
 	background: rgb(0,0,255);
+}
+input {
+	position: absolute;
+	opacity: 0;
 }

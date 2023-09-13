@@ -10,7 +10,7 @@
     </filter>
   </defs>
   <style id="style20939" type="text/css">
-    .st1{fill:#dc3d96}.st13{fill:#ee3981}.st21{fill:#f1da10}.st25{fill:#4f421a}.st32{fill:#f9ef5e}#paths path{fill:none;stroke-width:15}#pathsBG path{fill:none;stroke:#000;stroke-width:25}.line0{stroke:#a32929}.line1{stroke:#a37a29}.line2{stroke:#7aa329}.line3{stroke:#29a329}.line4{stroke:#29a37a}.line5{stroke:#297aa3}.line6{stroke:#2929a3}.line7{stroke:#7a29a3}.line8{stroke:#a3297a}#paths .line2{stroke-dasharray:8 4}
+    #pathsBG path{stroke-linecap: round;}.st1{fill:#dc3d96}.st13{fill:#ee3981}.st21{fill:#f1da10}.st25{fill:#4f421a}.st32{fill:#f9ef5e}#paths path{fill:none;stroke-width:15}#pathsBG path{fill:none;stroke:#000;stroke-width:25}.line0{stroke:#a32929}.line1{stroke:#a37a29}.line2{stroke:#7aa329}.line3{stroke:#29a329}.line4{stroke:#29a37a}.line5{stroke:#297aa3}.line6{stroke:#2929a3}.line7{stroke:#7a29a3}.line8{stroke:#a3297a}#paths .line2{stroke-dasharray:8 4}
   </style>
   <g id="g353" style="filter:url(#filter404)">
     <path fill="#00974a" d="M1086 955c15 40-57-3-78-21-100-82 103-39 78 21z" class="st25"/>
